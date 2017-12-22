@@ -1,0 +1,8 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+$capac-app-primary: mat-palette($mat-blue, 500);
+$capac-app-accent:  mat-palette($mat-blue-grey, 600);
+$capac-app-warn:    mat-palette($mat-red);
+$capac-app-theme: mat-light-theme($capac-app-primary, $capac-app-accent, $capac-app-warn);
+@include angular-material-theme($capac-app-theme);
