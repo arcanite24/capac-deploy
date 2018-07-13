@@ -489,7 +489,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var BackendService = (function () {
-    //public api: string = 'http://localhost:1337/api/v1'
+    // public api: string = 'http://localhost:1337/api/v1'
     function BackendService(http) {
         this.http = http;
         this.api = 'http://104.236.144.72/api/v1';
@@ -1394,7 +1394,7 @@ var _a, _b, _c;
 /***/ "../../../../../src/app/pages/admin/eventos-add/eventos-add.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<form #addForm=\"ngForm\" (ngSubmit)=\"add(addData)\">\r\n  <md-progress-bar mode=\"indeterminate\" *ngIf=\"loader\"></md-progress-bar>\r\n  <h3 mdDialogTitle>Agregar Evento</h3>\r\n\r\n  <md-dialog-content fxLayout=\"column\">\r\n    <md-input-container>\r\n      <input mdInput [(ngModel)]=\"addData.title\" type=\"text\" name=\"title\" placeholder=\"Titulo\" required>\r\n    </md-input-container>\r\n    <md-input-container floatPlaceholder=\"auto\">\r\n      <textarea mdInput mdTextareaAutosize [(ngModel)]=\"addData.text\" name=\"text\" required placeholder=\"Información del evento\"></textarea>\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput [(ngModel)]=\"addData.donation\" type=\"number\" min=\"1\" name=\"donation\" placeholder=\"Donativo\" required>\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput [mdDatepicker]=\"picker\" placeholder=\"Fecha del evento\" [(ngModel)]=\"addData.date\" name=\"date\">\r\n      <button mdSuffix [mdDatepickerToggle]=\"picker\"></button>\r\n    </md-input-container>\r\n    <md-datepicker #picker></md-datepicker>\r\n    <md-input-container>\r\n      <input mdInput [(ngModel)]=\"addData.hourStart\" type=\"time\" name=\"start\" placeholder=\"Hora de inicio\" required>\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput [(ngModel)]=\"addData.hourEnd\" type=\"time\" name=\"end\" placeholder=\"Hora de término\" required>\r\n    </md-input-container>\r\n    <input type=\"file\" imageUpload placeholder=\"Imágen\" (imageSelected)=\"selected($event)\" required>\r\n    <img [src]=\"addData.img\" alt=\"Imágen\" style=\"width: 10%\" *ngIf=\"addData.img\">\r\n  </md-dialog-content>\r\n  <md-dialog-actions>\r\n      <button md-button md-dialog-close>Cerrar</button>\r\n      <button md-button color=\"primary\" type=\"submit\" [disabled]=\"loader || !addData.img\">Agregar</button>\r\n  </md-dialog-actions>\r\n</form>"
+module.exports = "<form #addForm=\"ngForm\" (ngSubmit)=\"add(addData)\">\r\n  <md-progress-bar mode=\"indeterminate\" *ngIf=\"loader\"></md-progress-bar>\r\n  <h3 mdDialogTitle>Agregar Evento</h3>\r\n\r\n  <md-dialog-content fxLayout=\"column\">\r\n    <md-input-container>\r\n      <input mdInput [(ngModel)]=\"addData.title\" type=\"text\" name=\"title\" placeholder=\"Titulo\" required>\r\n    </md-input-container>\r\n    <!--<md-input-container>\r\n      <textarea mdInput mdTextareaAutosize [(ngModel)]=\"addData.text\" name=\"text\" required placeholder=\"Información del evento\"></textarea>\r\n    </md-input-container>-->\r\n    <ckeditor [(ngModel)]=\"addData.text\" name=\"text\" debounce=\"500\" [config]=\"{language: 'es'}\"></ckeditor>\r\n    <md-input-container>\r\n      <input mdInput [(ngModel)]=\"addData.donation\" type=\"number\" min=\"1\" name=\"donation\" placeholder=\"Donativo\" required>\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput [mdDatepicker]=\"picker\" placeholder=\"Fecha del evento\" [(ngModel)]=\"addData.date\" name=\"date\">\r\n      <button mdSuffix [mdDatepickerToggle]=\"picker\"></button>\r\n    </md-input-container>\r\n    <md-datepicker #picker></md-datepicker>\r\n    <md-input-container>\r\n      <input mdInput [(ngModel)]=\"addData.hourStart\" type=\"time\" name=\"start\" placeholder=\"Hora de inicio\" required>\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput [(ngModel)]=\"addData.hourEnd\" type=\"time\" name=\"end\" placeholder=\"Hora de término\" required>\r\n    </md-input-container>\r\n    <input type=\"file\" imageUpload placeholder=\"Imágen\" (imageSelected)=\"selected($event)\" required>\r\n    <img [src]=\"addData.img\" alt=\"Imágen\" style=\"width: 10%\" *ngIf=\"addData.img\">\r\n  </md-dialog-content>\r\n  <md-dialog-actions>\r\n      <button md-button md-dialog-close>Cerrar</button>\r\n      <button md-button color=\"primary\" type=\"submit\" [disabled]=\"loader || !addData.img\">Agregar</button>\r\n  </md-dialog-actions>\r\n</form>"
 
 /***/ }),
 
@@ -2958,6 +2958,7 @@ var UsuariosComponent = (function () {
             if (data.err)
                 return;
             _this.allUsers.splice(i, 1);
+            _this.ngOnInit();
         });
     };
     UsuariosComponent.prototype.openAdd = function () {
@@ -2969,6 +2970,7 @@ var UsuariosComponent = (function () {
             if (data.err)
                 return;
             _this.allUsers.push(data);
+            _this.ngOnInit();
         });
     };
     UsuariosComponent.prototype.openDetail = function (id) {
@@ -4174,7 +4176,7 @@ var _a, _b;
 /***/ "../../../../../src/app/pages/terapeuta/citas-add/citas-add.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<form #addForm=\"ngForm\" (ngSubmit)=\"add(addData)\">\r\n  <md-progress-bar mode=\"indeterminate\" *ngIf=\"loader\"></md-progress-bar>\r\n  <h3 mdDialogTitle>Agregar Cita</h3>\r\n\r\n  <md-dialog-content fxLayout=\"column\">\r\n    <md-select [(ngModel)]=\"addData.consultorio\" placeholder=\"Consultorio\" name=\"consultorio\">\r\n      <md-option value=\"CONSUL_1\">Consultorio 1</md-option>\r\n      <md-option value=\"CONSUL_2\">Consultorio 2</md-option>\r\n      <md-option value=\"CONSUL_INFANTIL\">Consultorio Infantil</md-option>\r\n      <md-option value=\"CONSUL_TRABAJO\">Sala de Trabajo</md-option>\r\n      <md-option value=\"CONSUL_COMUN\">Sala común</md-option>\r\n    </md-select>\r\n    <md-select [(ngModel)]=\"addData.paciente\" placeholder=\"Paciente\" name=\"paciente\">\r\n      <md-option [value]=\"user\" *ngFor=\"let user of allPacientes; let i = index\" [attr.data-index]=\"i\">{{user.name + ' ' + user.firstLastName + ' ' + user.secondLastName}}</md-option>\r\n    </md-select>\r\n    <md-input-container>\r\n      <input mdInput [(ngModel)]=\"addData.email\" type=\"text\" name=\"email\" placeholder=\"Correo de contacto\" required>\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput [(ngModel)]=\"addData.telefono\" type=\"text\" name=\"telefono\" placeholder=\"Telefono\" required>\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput [mdDatepicker]=\"picker\" placeholder=\"Fecha de la cita\" [(ngModel)]=\"addData.date\" name=\"date\" [min]=\"todayDate\">\r\n      <button mdSuffix [mdDatepickerToggle]=\"picker\"></button>\r\n    </md-input-container>\r\n    <md-datepicker #picker></md-datepicker>\r\n    <md-select [(ngModel)]=\"addData.hour\" placeholder=\"Hora\" name=\"hora\">\r\n      <md-option [value]=\"6\">6:00</md-option>\r\n      <md-option [value]=\"7\">7:00</md-option>\r\n      <md-option [value]=\"8\">8:00</md-option>\r\n      <md-option [value]=\"9\">9:00</md-option>\r\n      <md-option [value]=\"10\">10:00</md-option>\r\n      <md-option [value]=\"11\">11:00</md-option>\r\n      <md-option [value]=\"12\">12:00</md-option>\r\n      <md-option [value]=\"13\">13:00</md-option>\r\n      <md-option [value]=\"14\">14:00</md-option>\r\n      <md-option [value]=\"15\">15:00</md-option>\r\n      <md-option [value]=\"16\">16:00</md-option>\r\n      <md-option [value]=\"17\">17:00</md-option>\r\n      <md-option [value]=\"18\">18:00</md-option>\r\n      <md-option [value]=\"19\">19:00</md-option>\r\n      <md-option [value]=\"20\">20:00</md-option>\r\n      <md-option [value]=\"21\">21:00</md-option>\r\n      <md-option [value]=\"22\">22:00</md-option>\r\n      <md-option [value]=\"23\">23:00</md-option>\r\n    </md-select>\r\n  </md-dialog-content>\r\n\r\n  <md-dialog-actions>\r\n      <button md-button md-dialog-close>Cerrar</button>\r\n      <button md-button color=\"primary\" type=\"submit\" [disabled]=\"loader\">Agregar</button>\r\n  </md-dialog-actions>\r\n</form>"
+module.exports = "<form #addForm=\"ngForm\" (ngSubmit)=\"add(addData)\">\r\n  <md-progress-bar mode=\"indeterminate\" *ngIf=\"loader\"></md-progress-bar>\r\n  <h3 mdDialogTitle>Agregar Cita</h3>\r\n\r\n  <md-dialog-content fxLayout=\"column\">\r\n    <md-select [(ngModel)]=\"addData.consultorio\" placeholder=\"Consultorio\" name=\"consultorio\">\r\n      <md-option value=\"CONSUL_1\">Consultorio 1</md-option>\r\n      <md-option value=\"CONSUL_2\">Consultorio 2</md-option>\r\n      <md-option value=\"CONSUL_INFANTIL\">Consultorio Infantil</md-option>\r\n      <md-option value=\"CONSUL_TRABAJO\">Sala de Trabajo</md-option>\r\n      <md-option value=\"CONSUL_COMUN\">Sala común</md-option>\r\n    </md-select>\r\n    <md-select [(ngModel)]=\"addData.paciente\" placeholder=\"Paciente\" name=\"paciente\">\r\n      <md-option [value]=\"user\" *ngFor=\"let user of myPacientes; let i = index\" [attr.data-index]=\"i\">{{user.name + ' ' + user.firstLastName + ' ' + user.secondLastName}}</md-option>\r\n    </md-select>\r\n    <md-input-container>\r\n      <input mdInput [(ngModel)]=\"addData.email\" type=\"text\" name=\"email\" placeholder=\"Correo de contacto\" required>\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput [(ngModel)]=\"addData.telefono\" type=\"text\" name=\"telefono\" placeholder=\"Telefono\" required>\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput [mdDatepicker]=\"picker\" placeholder=\"Fecha de la cita\" [(ngModel)]=\"addData.date\" name=\"date\" [min]=\"todayDate\">\r\n      <button mdSuffix [mdDatepickerToggle]=\"picker\"></button>\r\n    </md-input-container>\r\n    <md-datepicker #picker></md-datepicker>\r\n    <md-select [(ngModel)]=\"addData.hour\" placeholder=\"Hora\" name=\"hora\">\r\n      <md-option [value]=\"6\">6:00</md-option>\r\n      <md-option [value]=\"7\">7:00</md-option>\r\n      <md-option [value]=\"8\">8:00</md-option>\r\n      <md-option [value]=\"9\">9:00</md-option>\r\n      <md-option [value]=\"10\">10:00</md-option>\r\n      <md-option [value]=\"11\">11:00</md-option>\r\n      <md-option [value]=\"12\">12:00</md-option>\r\n      <md-option [value]=\"13\">13:00</md-option>\r\n      <md-option [value]=\"14\">14:00</md-option>\r\n      <md-option [value]=\"15\">15:00</md-option>\r\n      <md-option [value]=\"16\">16:00</md-option>\r\n      <md-option [value]=\"17\">17:00</md-option>\r\n      <md-option [value]=\"18\">18:00</md-option>\r\n      <md-option [value]=\"19\">19:00</md-option>\r\n      <md-option [value]=\"20\">20:00</md-option>\r\n      <md-option [value]=\"21\">21:00</md-option>\r\n      <md-option [value]=\"22\">22:00</md-option>\r\n      <md-option [value]=\"23\">23:00</md-option>\r\n    </md-select>\r\n  </md-dialog-content>\r\n\r\n  <md-dialog-actions>\r\n      <button md-button md-dialog-close>Cerrar</button>\r\n      <button md-button color=\"primary\" type=\"submit\" [disabled]=\"loader\">Agregar</button>\r\n  </md-dialog-actions>\r\n</form>"
 
 /***/ }),
 
@@ -4239,17 +4241,16 @@ var CitasAddComponent = (function () {
         this.loader = false;
         this.addData = {};
         this.allPacientes = [];
+        this.myPacientes = [];
         this.todayDate = new Date();
     }
     CitasAddComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.loader = true;
-        console.log('isOwn', this.data);
         if (this.data.isOwn) {
             this.back.getMyPacientes().subscribe(function (data) {
                 _this.loader = false;
-                _this.allPacientes = data;
-                console.log(_this.allPacientes);
+                _this.myPacientes = data;
             }, function (err) {
                 _this.loader = false;
                 _this.snack.open('Error, no se pudieron cargar todos los pacientes.', '', { duration: 4000 });
