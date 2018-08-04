@@ -489,10 +489,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var BackendService = (function () {
+    // public api: string = 'http://localhost:1337/api/v1'
     function BackendService(http) {
         this.http = http;
-        // public api = 'http://104.236.144.72/api/v1'
-        this.api = 'http://localhost:1337/api/v1';
+        this.api = 'http://104.236.144.72/api/v1';
         var _user = localStorage.getItem('user');
         this.user = _user;
         if (!this.user)
