@@ -294,6 +294,7 @@ MaterialModule = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_62__pages_admin_add_public_profile_add_public_profile_component__ = __webpack_require__("../../../../../src/app/pages/admin/add-public-profile/add-public-profile.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_63__pages_admin_delete_public_profile_delete_public_profile_component__ = __webpack_require__("../../../../../src/app/pages/admin/delete-public-profile/delete-public-profile.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_64__pages_admin_edit_public_profile_edit_public_profile_component__ = __webpack_require__("../../../../../src/app/pages/admin/edit-public-profile/edit-public-profile.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_65__pages_admin_detail_public_profile_detail_public_profile_component__ = __webpack_require__("../../../../../src/app/pages/admin/detail-public-profile/detail-public-profile.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -301,6 +302,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -426,6 +428,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_62__pages_admin_add_public_profile_add_public_profile_component__["a" /* AddPublicProfileComponent */],
             __WEBPACK_IMPORTED_MODULE_63__pages_admin_delete_public_profile_delete_public_profile_component__["a" /* DeletePublicProfileComponent */],
             __WEBPACK_IMPORTED_MODULE_64__pages_admin_edit_public_profile_edit_public_profile_component__["a" /* EditPublicProfileComponent */],
+            __WEBPACK_IMPORTED_MODULE_65__pages_admin_detail_public_profile_detail_public_profile_component__["a" /* DetailPublicProfileComponent */],
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["BrowserModule"],
@@ -475,6 +478,10 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_57__pages_terapeuta_cuestionario_detail_cuestionario_detail_component__["a" /* CuestionarioDetailComponent */],
             __WEBPACK_IMPORTED_MODULE_59__seg_detail_seg_detail_component__["a" /* SegDetailComponent */],
             __WEBPACK_IMPORTED_MODULE_60__change_pass_change_pass_component__["a" /* ChangePassComponent */],
+            __WEBPACK_IMPORTED_MODULE_63__pages_admin_delete_public_profile_delete_public_profile_component__["a" /* DeletePublicProfileComponent */],
+            __WEBPACK_IMPORTED_MODULE_64__pages_admin_edit_public_profile_edit_public_profile_component__["a" /* EditPublicProfileComponent */],
+            __WEBPACK_IMPORTED_MODULE_62__pages_admin_add_public_profile_add_public_profile_component__["a" /* AddPublicProfileComponent */],
+            __WEBPACK_IMPORTED_MODULE_65__pages_admin_detail_public_profile_detail_public_profile_component__["a" /* DetailPublicProfileComponent */]
         ],
         providers: [__WEBPACK_IMPORTED_MODULE_0__backend_service__["a" /* BackendService */]],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_13__app_component__["a" /* AppComponent */]]
@@ -534,15 +541,20 @@ var BackendService = (function () {
         return this.http.post(this.api + "/user/changePass", { id: id, pass: pass }).map(function (res) { return res.json(); });
     };
     // Perfiles publicos
-    BackendService.prototype.addPublicProfile = function () {
+    BackendService.prototype.addPublicProfile = function (data) {
+        return this.http.post(this.api + "/publicprofiile", data).map(function (res) { return res.json(); });
     };
     BackendService.prototype.getAllPublicProfiles = function () {
+        return this.http.get(this.api + "/publicprofiile").map(function (res) { return res.json(); });
     };
-    BackendService.prototype.getPublicProfile = function () {
+    BackendService.prototype.getPublicProfile = function (id) {
+        return this.http.get(this.api + "/publicprofiile/" + id).map(function (res) { return res.json(); });
     };
-    BackendService.prototype.deletePublicProfile = function () {
+    BackendService.prototype.deletePublicProfile = function (id) {
+        return this.http.delete(this.api + "/publicprofiile/" + id).map(function (res) { return res.json(); });
     };
-    BackendService.prototype.editPublicProfile = function () {
+    BackendService.prototype.editPublicProfile = function (id, data) {
+        return this.http.put(this.api + "/publicprofiile/" + id, data).map(function (res) { return res.json(); });
     };
     // user usuarios
     BackendService.prototype.getAllUsers = function () {
@@ -786,7 +798,7 @@ var _a, _b, _c;
 /***/ "../../../../../src/app/pages/admin/add-public-profile/add-public-profile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  add-public-profile works!\n</p>\n"
+module.exports = "<form #addForm=\"ngForm\" (ngSubmit)=\"add(addData)\">\n  <md-progress-bar mode=\"indeterminate\" *ngIf=\"loader\"></md-progress-bar>\n  <h3 mdDialogTitle>Agregar Perfil Público</h3>\n  \n  <md-dialog-content fxLayout=\"column\">\n\n    <md-input-container>\n      <input mdInput [(ngModel)]=\"addData.name\" type=\"text\" name=\"name\" placeholder=\"Nombre\" required>\n    </md-input-container>\n\n    Contacto\n    <ckeditor [(ngModel)]=\"addData.contact\" name=\"text\" debounce=\"100\" [config]=\"{language: 'es'}\"></ckeditor>\n\n    <md-input-container>\n      <input mdInput [(ngModel)]=\"addData.titulo\" type=\"text\" min=\"1\" name=\"titulo\" placeholder=\"Titulo\" required>\n    </md-input-container>\n\n    Perfil y especialidad\n    <ckeditor [(ngModel)]=\"addData.perfil\" name=\"text\" debounce=\"500\" [config]=\"{language: 'es'}\"></ckeditor>\n\n    Formación academica\n    <ckeditor [(ngModel)]=\"addData.formacionAcademica\" name=\"text\" debounce=\"250\" [config]=\"{language: 'es'}\"></ckeditor>\n\n    <md-input-container>\n      <input mdInput [(ngModel)]=\"addData.costoSesion\" type=\"number\" min=\"1\" name=\"donation\" placeholder=\"Costo por sesión\" required>\n    </md-input-container>\n\n    Cursos y talleres\n    <ckeditor [(ngModel)]=\"addData.talleres\" name=\"text\" debounce=\"200\" [config]=\"{language: 'es'}\"></ckeditor>\n\n    <input type=\"file\" imageUpload placeholder=\"Imágen\" (imageSelected)=\"selected($event)\" required>\n\n    <img [src]=\"addData.img\" alt=\"Imágen\" style=\"width: 10%\" *ngIf=\"addData.img\">\n\n  </md-dialog-content>\n  <md-dialog-actions>\n    <button md-button md-dialog-close>Cerrar</button>\n    <button md-button color=\"primary\" type=\"submit\" [disabled]=\"loader || !addData.img\">Agregar</button>\n  </md-dialog-actions>\n</form>\n\n<!--\n  Contacto\n-->"
 
 /***/ }),
 
@@ -813,6 +825,8 @@ module.exports = module.exports.toString();
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__backend_service__ = __webpack_require__("../../../../../src/app/backend.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddPublicProfileComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -824,10 +838,41 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
 var AddPublicProfileComponent = (function () {
-    function AddPublicProfileComponent() {
+    function AddPublicProfileComponent(ref, back, snack) {
+        this.ref = ref;
+        this.back = back;
+        this.snack = snack;
+        this.loader = false;
+        this.addData = {};
     }
-    AddPublicProfileComponent.prototype.ngOnInit = function () {
+    AddPublicProfileComponent.prototype.add = function (data) {
+        var _this = this;
+        this.loader = true;
+        this.back.addPublicProfile(data).subscribe(function (res) {
+            _this.loader = false;
+            _this.snack.open('Perfil agregado correctamente', '', { duration: 4000 });
+            _this.ref.close(res);
+        }, function (err) {
+            _this.loader = false;
+            console.log(err);
+            _this.snack.open('Error, no se pudo agregar el perfil', '', { duration: 4000 });
+            _this.ref.close({ err: err });
+        });
+    };
+    AddPublicProfileComponent.prototype.selected = function (res) {
+        var _this = this;
+        this.loader = true;
+        this.back.uploadFile(res.file).subscribe(function (data) {
+            _this.loader = false;
+            _this.addData.img = data.secure_url;
+            _this.loader = false;
+        }, function (err) {
+            _this.loader = false;
+            _this.snack.open('Error, no se pudo subir la imágen', '', { duration: 4000 });
+        });
     };
     return AddPublicProfileComponent;
 }());
@@ -837,9 +882,10 @@ AddPublicProfileComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/pages/admin/add-public-profile/add-public-profile.component.html"),
         styles: [__webpack_require__("../../../../../src/app/pages/admin/add-public-profile/add-public-profile.component.scss")]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_material__["r" /* MdDialogRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_material__["r" /* MdDialogRef */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__backend_service__["a" /* BackendService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__backend_service__["a" /* BackendService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_material__["s" /* MdSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_material__["s" /* MdSnackBar */]) === "function" && _c || Object])
 ], AddPublicProfileComponent);
 
+var _a, _b, _c;
 //# sourceMappingURL=add-public-profile.component.js.map
 
 /***/ }),
@@ -978,7 +1024,7 @@ var _a, _b, _c;
 /***/ "../../../../../src/app/pages/admin/delete-public-profile/delete-public-profile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  delete-public-profile works!\n</p>\n"
+module.exports = "<h3 mdDialogTitle>Eliminar</h3>\n\n<md-dialog-content>\n  <md-progress-bar mode=\"indeterminate\" *ngIf=\"loader\"></md-progress-bar>\n  <h4>¿Estás seguro de borrar el perfil público?</h4>\n</md-dialog-content>\n\n<md-dialog-actions>\n    <button md-button md-dialog-close color=\"warn\">Cancelar</button>\n    <button md-button (click)=\"delete(data)\" [disabled]=\"loader\">Borrar</button>\n</md-dialog-actions>\n"
 
 /***/ }),
 
@@ -1005,6 +1051,8 @@ module.exports = module.exports.toString();
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__backend_service__ = __webpack_require__("../../../../../src/app/backend.service.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DeletePublicProfileComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1015,11 +1063,34 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+
+
 
 var DeletePublicProfileComponent = (function () {
-    function DeletePublicProfileComponent() {
+    function DeletePublicProfileComponent(data, ref, back, snack) {
+        this.data = data;
+        this.ref = ref;
+        this.back = back;
+        this.snack = snack;
+        this.loader = false;
     }
     DeletePublicProfileComponent.prototype.ngOnInit = function () {
+    };
+    DeletePublicProfileComponent.prototype.delete = function (id) {
+        var _this = this;
+        this.loader = true;
+        this.back.deletePublicProfile(id).subscribe(function (data) {
+            _this.loader = false;
+            _this.snack.open('Perfil público eliminado correctamente.', '', { duration: 4000 });
+            _this.ref.close(data);
+        }, function (err) {
+            _this.loader = false;
+            _this.snack.open('Error, no se pudo eliminar el perfil público.', '', { duration: 4000 });
+            _this.ref.close({ err: err });
+        });
     };
     return DeletePublicProfileComponent;
 }());
@@ -1029,17 +1100,106 @@ DeletePublicProfileComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/pages/admin/delete-public-profile/delete-public-profile.component.html"),
         styles: [__webpack_require__("../../../../../src/app/pages/admin/delete-public-profile/delete-public-profile.component.scss")]
     }),
-    __metadata("design:paramtypes", [])
+    __param(0, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Inject"])(__WEBPACK_IMPORTED_MODULE_1__angular_material__["q" /* MD_DIALOG_DATA */])),
+    __metadata("design:paramtypes", [Object, typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material__["r" /* MdDialogRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_material__["r" /* MdDialogRef */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__backend_service__["a" /* BackendService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__backend_service__["a" /* BackendService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material__["s" /* MdSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_material__["s" /* MdSnackBar */]) === "function" && _c || Object])
 ], DeletePublicProfileComponent);
 
+var _a, _b, _c;
 //# sourceMappingURL=delete-public-profile.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/pages/admin/detail-public-profile/detail-public-profile.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<h3 mdDialogTitle>{{pProfile.name}}</h3>\n\n<md-dialog-content>\n  <md-progress-bar mode=\"indeterminate\" *ngIf=\"loader\"></md-progress-bar>\n  <div class=\"evento-detail-container\" fxLayout=\"row\" fxLayoutWrap>\n    <div fxFlex=\"70\" fxLayout=\"column\">\n      <strong>Contacto: </strong> \n      <div [innerHtml]=\"pProfile.contact\"></div>\n      <strong>Titulo: </strong>\n      <div [innerHtml]=\"pProfile.titulo\"></div>      \n      <strong>Perfil y especialidad: </strong>\n      <div [innerHtml]=\"pProfile.perfil\"></div>\n      <strong>Formación académica: </strong>\n      <div [innerHtml]=\"pProfile.formacionAcademica\"></div>\n      <strong>Costo por sesión: </strong>\n      <div>{{ pProfile.costoSesion | currency:'MXN' }}</div>\n      <strong>Talleres: </strong>\n      <div [innerHtml]=\"pProfile.talleres\"></div>\n    </div>\n    <div fxFlex=\"30\" fxLayout=\"row\" fxLayoutAlign=\"center center\">\n      <img [src]=\"pProfile.img\" alt=\"Imágen del evento\" style=\"width: 80%;\">\n    </div>\n  </div>\n</md-dialog-content>\n\n<md-dialog-actions>\n    <button md-button md-dialog-close>Cerrar</button>\n</md-dialog-actions>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/pages/admin/detail-public-profile/detail-public-profile.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/pages/admin/detail-public-profile/detail-public-profile.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__backend_service__ = __webpack_require__("../../../../../src/app/backend.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DetailPublicProfileComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+
+
+
+var DetailPublicProfileComponent = (function () {
+    function DetailPublicProfileComponent(data, ref, back, snack) {
+        this.data = data;
+        this.ref = ref;
+        this.back = back;
+        this.snack = snack;
+        this.loader = false;
+        this.pProfile = {};
+    }
+    DetailPublicProfileComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.loader = true;
+        this.back.getPublicProfile(this.data.id).subscribe(function (data) {
+            console.log(data);
+            _this.loader = false;
+            _this.pProfile = data;
+        }, function (err) {
+            _this.loader = false;
+            _this.snack.open('Error, no se pudo cargar el perfil púublico.', '', { duration: 4000 });
+            _this.ref.close({ err: err });
+        });
+    };
+    return DetailPublicProfileComponent;
+}());
+DetailPublicProfileComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
+        selector: 'app-detail-public-profile',
+        template: __webpack_require__("../../../../../src/app/pages/admin/detail-public-profile/detail-public-profile.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/pages/admin/detail-public-profile/detail-public-profile.component.scss")]
+    }),
+    __param(0, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Inject"])(__WEBPACK_IMPORTED_MODULE_0__angular_material__["q" /* MD_DIALOG_DATA */])),
+    __metadata("design:paramtypes", [Object, typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_material__["r" /* MdDialogRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_material__["r" /* MdDialogRef */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__backend_service__["a" /* BackendService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__backend_service__["a" /* BackendService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_material__["s" /* MdSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_material__["s" /* MdSnackBar */]) === "function" && _c || Object])
+], DetailPublicProfileComponent);
+
+var _a, _b, _c;
+//# sourceMappingURL=detail-public-profile.component.js.map
 
 /***/ }),
 
 /***/ "../../../../../src/app/pages/admin/edit-public-profile/edit-public-profile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  edit-public-profile works!\n</p>\n"
+module.exports = "<form #addForm=\"ngForm\" (ngSubmit)=\"edit(editData)\">\n  <md-progress-bar mode=\"indeterminate\" *ngIf=\"loader\"></md-progress-bar>\n  <h3 mdDialogTitle>Editar Perfil Público</h3>\n\n  <md-dialog-content fxLayout=\"column\">\n\n    <md-input-container>\n      <input mdInput [(ngModel)]=\"editData.name\" type=\"text\" name=\"name\" placeholder=\"Nombre\" required>\n    </md-input-container>\n\n    Contacto\n    <ckeditor [(ngModel)]=\"editData.contact\" name=\"text\" debounce=\"100\" [config]=\"{language: 'es'}\"></ckeditor>\n\n    <md-input-container>\n      <input mdInput [(ngModel)]=\"editData.titulo\" type=\"text\" min=\"1\" name=\"titulo\" placeholder=\"Titulo\" required>\n    </md-input-container>\n\n    Perfil y especialidad\n    <ckeditor [(ngModel)]=\"editData.perfil\" name=\"text\" debounce=\"500\" [config]=\"{language: 'es'}\"></ckeditor>\n\n    Formación academica\n    <ckeditor [(ngModel)]=\"editData.formacionAcademica\" name=\"text\" debounce=\"250\" [config]=\"{language: 'es'}\"></ckeditor>\n\n    <md-input-container>\n      <input mdInput [(ngModel)]=\"editData.costoSesion\" type=\"number\" min=\"1\" name=\"donation\" placeholder=\"Costo por sesión\"\n        required>\n    </md-input-container>\n\n    Cursos y talleres\n    <ckeditor [(ngModel)]=\"editData.talleres\" name=\"text\" debounce=\"200\" [config]=\"{language: 'es'}\"></ckeditor>\n\n    <img [src]=\"editData.img\" alt=\"Imágen\" style=\"width: 10%\" *ngIf=\"editData.img\">\n\n  </md-dialog-content>\n  <md-dialog-actions>\n    <button md-button md-dialog-close>Cerrar</button>\n    <button md-button color=\"primary\" type=\"submit\" [disabled]=\"loader\">Editar</button>\n  </md-dialog-actions>\n</form>\n"
 
 /***/ }),
 
@@ -1066,6 +1226,8 @@ module.exports = module.exports.toString();
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__backend_service__ = __webpack_require__("../../../../../src/app/backend.service.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EditPublicProfileComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1076,11 +1238,45 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+
+
 
 var EditPublicProfileComponent = (function () {
-    function EditPublicProfileComponent() {
+    function EditPublicProfileComponent(data, ref, back, snack) {
+        this.data = data;
+        this.ref = ref;
+        this.back = back;
+        this.snack = snack;
+        this.loader = false;
+        this.editData = {};
     }
     EditPublicProfileComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.loader = true;
+        this.back.getPublicProfile(this.data).subscribe(function (data) {
+            _this.loader = false;
+            _this.editData = data;
+        }, function (err) {
+            console.log(err);
+            _this.loader = false;
+            _this.snack.open('Error, no se pudo cargar el perfil público.', '', { duration: 4000 });
+            _this.ref.close({ err: err });
+        });
+    };
+    EditPublicProfileComponent.prototype.edit = function (data) {
+        var _this = this;
+        this.loader = true;
+        this.back.editPublicProfile(this.data, data).subscribe(function (data) {
+            _this.loader = false;
+            _this.snack.open('Perfil público editado correctamente.', '', { duration: 4000 });
+            _this.ref.close(data);
+        }, function (err) {
+            _this.loader = false;
+            _this.snack.open('Error, no se pudo editar el perfil público.', '', { duration: 4000 });
+        });
     };
     return EditPublicProfileComponent;
 }());
@@ -1090,9 +1286,11 @@ EditPublicProfileComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/pages/admin/edit-public-profile/edit-public-profile.component.html"),
         styles: [__webpack_require__("../../../../../src/app/pages/admin/edit-public-profile/edit-public-profile.component.scss")]
     }),
-    __metadata("design:paramtypes", [])
+    __param(0, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Inject"])(__WEBPACK_IMPORTED_MODULE_1__angular_material__["q" /* MD_DIALOG_DATA */])),
+    __metadata("design:paramtypes", [Object, typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material__["r" /* MdDialogRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_material__["r" /* MdDialogRef */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__backend_service__["a" /* BackendService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__backend_service__["a" /* BackendService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material__["s" /* MdSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_material__["s" /* MdSnackBar */]) === "function" && _c || Object])
 ], EditPublicProfileComponent);
 
+var _a, _b, _c;
 //# sourceMappingURL=edit-public-profile.component.js.map
 
 /***/ }),
@@ -1603,7 +1801,7 @@ var _a, _b, _c;
 /***/ "../../../../../src/app/pages/admin/eventos-add/eventos-add.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<form #addForm=\"ngForm\" (ngSubmit)=\"add(addData)\">\r\n  <md-progress-bar mode=\"indeterminate\" *ngIf=\"loader\"></md-progress-bar>\r\n  <h3 mdDialogTitle>Agregar Evento</h3>\r\n\r\n  <md-dialog-content fxLayout=\"column\">\r\n    <md-input-container>\r\n      <input mdInput [(ngModel)]=\"addData.title\" type=\"text\" name=\"title\" placeholder=\"Titulo\" required>\r\n    </md-input-container>\r\n    <!--<md-input-container>\r\n      <textarea mdInput mdTextareaAutosize [(ngModel)]=\"addData.text\" name=\"text\" required placeholder=\"Información del evento\"></textarea>\r\n    </md-input-container>-->\r\n    <ckeditor [(ngModel)]=\"addData.text\" name=\"text\" debounce=\"500\" [config]=\"{language: 'es'}\"></ckeditor>\r\n    <md-input-container>\r\n      <input mdInput [(ngModel)]=\"addData.donation\" type=\"number\" min=\"1\" name=\"donation\" placeholder=\"Donativo\" required>\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput [mdDatepicker]=\"picker\" placeholder=\"Fecha del evento\" [(ngModel)]=\"addData.date\" name=\"date\">\r\n      <button mdSuffix [mdDatepickerToggle]=\"picker\"></button>\r\n    </md-input-container>\r\n    <md-datepicker #picker></md-datepicker>\r\n    <md-input-container>\r\n      <input mdInput [(ngModel)]=\"addData.hourStart\" type=\"time\" name=\"start\" placeholder=\"Hora de inicio\" required>\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput [(ngModel)]=\"addData.hourEnd\" type=\"time\" name=\"end\" placeholder=\"Hora de término\" required>\r\n    </md-input-container>\r\n    <input type=\"file\" imageUpload placeholder=\"Imágen\" (imageSelected)=\"selected($event)\" required>\r\n    <img [src]=\"addData.img\" alt=\"Imágen\" style=\"width: 10%\" *ngIf=\"addData.img\">\r\n  </md-dialog-content>\r\n  <md-dialog-actions>\r\n    <button md-button md-dialog-close>Cerrar</button>\r\n    <button md-button color=\"primary\" type=\"submit\" [disabled]=\"loader || !addData.img\">Agregar</button>\r\n  </md-dialog-actions>\r\n</form>\r\n"
+module.exports = "<form #addForm=\"ngForm\" (ngSubmit)=\"add(addData)\">\r\n  <md-progress-bar mode=\"indeterminate\" *ngIf=\"loader\"></md-progress-bar>\r\n  <h3 mdDialogTitle>Agregar Evento</h3>\r\n\r\n  <md-dialog-content fxLayout=\"column\">\r\n    <md-input-container>\r\n      <input mdInput [(ngModel)]=\"addData.title\" type=\"text\" name=\"title\" placeholder=\"Titulo\" required>\r\n    </md-input-container>\r\n    <ckeditor [(ngModel)]=\"addData.text\" name=\"text\" debounce=\"500\" [config]=\"{language: 'es'}\"></ckeditor>\r\n    <md-input-container>\r\n      <input mdInput [(ngModel)]=\"addData.donation\" type=\"number\" min=\"1\" name=\"donation\" placeholder=\"Donativo\"\r\n        required>\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput [mdDatepicker]=\"picker\" placeholder=\"Fecha del evento\" [(ngModel)]=\"addData.date\" name=\"date\">\r\n      <button mdSuffix [mdDatepickerToggle]=\"picker\"></button>\r\n    </md-input-container>\r\n    <md-datepicker #picker></md-datepicker>\r\n    <md-input-container>\r\n      <input mdInput [(ngModel)]=\"addData.hourStart\" type=\"time\" name=\"start\" placeholder=\"Hora de inicio\" required>\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput [(ngModel)]=\"addData.hourEnd\" type=\"time\" name=\"end\" placeholder=\"Hora de término\" required>\r\n    </md-input-container>\r\n    <input type=\"file\" imageUpload placeholder=\"Imágen\" (imageSelected)=\"selected($event)\" required>\r\n    <img [src]=\"addData.img\" alt=\"Imágen\" style=\"width: 10%\" *ngIf=\"addData.img\">\r\n  </md-dialog-content>\r\n  <md-dialog-actions>\r\n    <button md-button md-dialog-close>Cerrar</button>\r\n    <button md-button color=\"primary\" type=\"submit\" [disabled]=\"loader || !addData.img\">Agregar</button>\r\n  </md-dialog-actions>\r\n</form>\r\n"
 
 /***/ }),
 
@@ -1869,7 +2067,7 @@ var _a, _b, _c;
 /***/ "../../../../../src/app/pages/admin/eventos-edit/eventos-edit.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<form #addForm=\"ngForm\" (ngSubmit)=\"edit(editData)\">\r\n  <md-progress-bar mode=\"indeterminate\" *ngIf=\"loader\"></md-progress-bar>\r\n  <h3 mdDialogTitle>Editar Evento</h3>\r\n\r\n  <md-dialog-content fxLayout=\"column\">\r\n    <md-input-container>\r\n      <input mdInput [(ngModel)]=\"editData.title\" type=\"text\" name=\"title\" placeholder=\"Titulo\" required>\r\n    </md-input-container>\r\n      <!--<textarea mdInput mdTextareaAutosize [(ngModel)]=\"editData.text\" name=\"text\" required placeholder=\"Información del evento\"></textarea>-->\r\n      <ckeditor [(ngModel)]=\"editData.text\" name=\"text\" debounce=\"500\" [config]=\"{language: 'es'}\"></ckeditor>\r\n    <md-input-container>\r\n      <input mdInput [(ngModel)]=\"editData.donation\" type=\"number\" min=\"1\" name=\"donation\" placeholder=\"Donativo\" required>\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput [mdDatepicker]=\"picker\" placeholder=\"Fecha del evento\" [(ngModel)]=\"editData.date\" name=\"date\">\r\n      <button mdSuffix [mdDatepickerToggle]=\"picker\"></button>\r\n    </md-input-container>\r\n    <md-datepicker #picker></md-datepicker>\r\n    <md-input-container>\r\n      <input mdInput [(ngModel)]=\"editData.hourStart\" type=\"time\" name=\"start\" placeholder=\"Hora de inicio\" required>\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput [(ngModel)]=\"editData.hourEnd\" type=\"time\" name=\"end\" placeholder=\"Hora de inicio\" required>\r\n    </md-input-container>\r\n    <img [src]=\"editData.img\" alt=\"Imágen\" style=\"width: 10%\" *ngIf=\"editData.img\">\r\n  </md-dialog-content>\r\n  <md-dialog-actions>\r\n    <button md-button md-dialog-close>Cerrar</button>\r\n    <button md-button color=\"primary\" type=\"submit\" [disabled]=\"loader\">Editar</button>\r\n  </md-dialog-actions>\r\n</form>\r\n"
+module.exports = "<form #addForm=\"ngForm\" (ngSubmit)=\"edit(editData)\">\r\n  <md-progress-bar mode=\"indeterminate\" *ngIf=\"loader\"></md-progress-bar>\r\n  <h3 mdDialogTitle>Editar Evento</h3>\r\n\r\n  <md-dialog-content fxLayout=\"column\">\r\n    <md-input-container>\r\n      <input mdInput [(ngModel)]=\"editData.title\" type=\"text\" name=\"title\" placeholder=\"Titulo\" required>\r\n    </md-input-container>\r\n    <ckeditor [(ngModel)]=\"editData.text\" name=\"text\" debounce=\"500\" [config]=\"{language: 'es'}\"></ckeditor>\r\n    <md-input-container>\r\n      <input mdInput [(ngModel)]=\"editData.donation\" type=\"number\" min=\"1\" name=\"donation\" placeholder=\"Donativo\"\r\n        required>\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput [mdDatepicker]=\"picker\" placeholder=\"Fecha del evento\" [(ngModel)]=\"editData.date\" name=\"date\">\r\n      <button mdSuffix [mdDatepickerToggle]=\"picker\"></button>\r\n    </md-input-container>\r\n    <md-datepicker #picker></md-datepicker>\r\n    <md-input-container>\r\n      <input mdInput [(ngModel)]=\"editData.hourStart\" type=\"time\" name=\"start\" placeholder=\"Hora de inicio\" required>\r\n    </md-input-container>\r\n    <md-input-container>\r\n      <input mdInput [(ngModel)]=\"editData.hourEnd\" type=\"time\" name=\"end\" placeholder=\"Hora de inicio\" required>\r\n    </md-input-container>\r\n    <img [src]=\"editData.img\" alt=\"Imágen\" style=\"width: 10%\" *ngIf=\"editData.img\">\r\n  </md-dialog-content>\r\n  <md-dialog-actions>\r\n    <button md-button md-dialog-close>Cerrar</button>\r\n    <button md-button color=\"primary\" type=\"submit\" [disabled]=\"loader\">Editar</button>\r\n  </md-dialog-actions>\r\n</form>\r\n"
 
 /***/ }),
 
@@ -1967,7 +2165,7 @@ var _a, _b, _c;
 /***/ "../../../../../src/app/pages/admin/eventos/eventos.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"crud-container b-eee\" fxLayout=\"column\">\r\n  <div class=\"crud-titles\" fxLayout=\"row\" fxLayoutAlign=\"start center\" fxLayoutWrap>\r\n    <h1>Eventos</h1>\r\n    <button md-fab (click)=\"openAdd()\" style=\"margin-left: auto\"><md-icon>add</md-icon></button>\r\n  </div>\r\n  <md-progress-bar mode=\"indeterminate\" *ngIf=\"loader\"></md-progress-bar>\r\n  <table class=\"res-table w100\">\r\n    <thead>\r\n      <tr>\r\n        <th scope=\"col\">Nombre</th>\r\n        <th scope=\"col\">Información</th>\r\n        <th scope=\"col\">Donación</th>\r\n        <th scope=\"col\">Fecha</th>\r\n        <th scope=\"col\">Horario</th>\r\n        <th scope=\"col\">Acciones</th>\r\n      </tr>\r\n    </thead>\r\n    <tbody>\r\n      <tr *ngFor=\"let row of allEventos\">\r\n        <td data-label=\"Nombre\">{{row.title}}</td>\r\n        <td data-label=\"Información\">{{row.text ? row.text.substring(0, 100) + '...' : ''}}</td>\r\n        <td data-label=\"Donación\">{{row.donation | currency:'MXN'}}</td>\r\n        <td data-label=\"Fecha\">{{row.date | date:'shortDate'}}</td>\r\n        <td data-label=\"Horario\">{{row.hourStart + ' - ' + row.hourEnd}}</td>\r\n        <td data-label=\"Acciones\">\r\n          <button md-icon-button mdTooltip=\"Editar\" (click)=\"openEdit(row.id, row.$$index)\"><md-icon class=\"c54\">border_color</md-icon></button>\r\n          <button md-icon-button mdTooltip=\"Borrar\" (click)=\"openDelete(row.id, row.$$index)\"><md-icon class=\"c54\">delete</md-icon></button>\r\n          <button md-icon-button mdTooltip=\"Detalles\" (click)=\"openDetail(row.id)\"><md-icon class=\"c54\">details</md-icon></button>\r\n        </td>\r\n      </tr>\r\n    </tbody>\r\n  </table>\r\n</div>"
+module.exports = "<div class=\"crud-container b-eee\" fxLayout=\"column\">\r\n  <div class=\"crud-titles\" fxLayout=\"row\" fxLayoutAlign=\"start center\" fxLayoutWrap>\r\n    <h1>Eventos</h1>\r\n    <button md-fab (click)=\"openAdd()\" style=\"margin-left: auto\">\r\n      <md-icon>add</md-icon>\r\n    </button>\r\n  </div>\r\n  <md-progress-bar mode=\"indeterminate\" *ngIf=\"loader\"></md-progress-bar>\r\n  <table class=\"res-table w100\">\r\n    <thead>\r\n      <tr>\r\n        <th scope=\"col\">Nombre</th>\r\n        <th scope=\"col\">Información</th>\r\n        <th scope=\"col\">Donación</th>\r\n        <th scope=\"col\">Fecha</th>\r\n        <th scope=\"col\">Horario</th>\r\n        <th scope=\"col\">Acciones</th>\r\n      </tr>\r\n    </thead>\r\n    <tbody>\r\n      <tr *ngFor=\"let row of allEventos\">\r\n        <td data-label=\"Nombre\">{{row.title}}</td>\r\n        <td data-label=\"Información\">{{row.text ? row.text.substring(0, 100) + '...' : ''}}</td>\r\n        <td data-label=\"Donación\">{{row.donation | currency:'MXN'}}</td>\r\n        <td data-label=\"Fecha\">{{row.date | date:'shortDate'}}</td>\r\n        <td data-label=\"Horario\">{{row.hourStart + ' - ' + row.hourEnd}}</td>\r\n        <td data-label=\"Acciones\">\r\n          <button md-icon-button mdTooltip=\"Editar\" (click)=\"openEdit(row.id, row.$$index)\">\r\n            <md-icon class=\"c54\">border_color</md-icon>\r\n          </button>\r\n          <button md-icon-button mdTooltip=\"Borrar\" (click)=\"openDelete(row.id, row.$$index)\">\r\n            <md-icon class=\"c54\">delete</md-icon>\r\n          </button>\r\n          <button md-icon-button mdTooltip=\"Detalles\" (click)=\"openDetail(row.id)\">\r\n            <md-icon class=\"c54\">details</md-icon>\r\n          </button>\r\n        </td>\r\n      </tr>\r\n    </tbody>\r\n  </table>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -2688,7 +2886,7 @@ var _a, _b, _c;
 /***/ "../../../../../src/app/pages/admin/public-profile/public-profile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"crud-container b-eee\" fxLayout=\"column\">\n  <div class=\"crud-titles\" fxLayout=\"row\" fxLayoutAlign=\"start center\" fxLayoutWrap>\n    <h1>Perfiles públicos</h1>\n    <button md-fab (click)=\"openAdd()\" style=\"margin-left: auto\"><md-icon>add</md-icon></button>\n  </div>\n  <h1>Public profile works!</h1>\n  </div>"
+module.exports = "<div class=\"crud-container b-eee\" fxLayout=\"column\">\n  <div class=\"crud-titles\" fxLayout=\"row\" fxLayoutAlign=\"start center\" fxLayoutWrap>\n    <h1>Perfiles públicos</h1>\n    <button md-fab (click)=\"openAdd()\" style=\"margin-left: auto\">\n      <md-icon>add</md-icon>\n    </button>\n  </div>\n  <md-progress-bar mode=\"indeterminate\" *ngIf=\"loader\"></md-progress-bar>\n  <table class=\"res-table w100\">\n    <thead>\n      <tr>\n        <th scope=\"col\">Nombre</th>\n        <th scope=\"col\">Titulo</th>\n        <th scope=\"col\">Perfil y especialidad</th>\n        <th scope=\"col\">Formación academica</th>\n        <th scope=\"col\">Costo sesión</th>\n        <th scope=\"col\">Acciones</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let row of allEventos\">\n        <td data-label=\"Nombre\">{{row.name}}</td>\n        <td data-label=\"Titulo\">{{row.titulo ? row.titulo.substring(0, 100) + '...' : ''}}</td>\n        <td data-label=\"Perfil y especialidad\">{{row.perfil ? row.perfil.substring(0, 100) + '...' : ''}}</td>\n        <td data-label=\"Formación academica\">{{row.formacionAcademica ? row.formacionAcademica.substring(0, 100) + '...' : ''}}</td>\n        <td data-label=\"Costo sesión\">{{row.costoSesion | currency:'MXN'}}</td>\n        <td data-label=\"Acciones\">\n          <button md-icon-button mdTooltip=\"Editar\" (click)=\"openEdit(row.id, row.$$index)\">\n            <md-icon class=\"c54\">border_color</md-icon>\n          </button>\n          <button md-icon-button mdTooltip=\"Borrar\" (click)=\"openDelete(row.id, row.$$index)\">\n            <md-icon class=\"c54\">delete</md-icon>\n          </button>\n          <button md-icon-button mdTooltip=\"Detalles\" (click)=\"openDetail(row.id)\">\n            <md-icon class=\"c54\">details</md-icon>\n          </button>\n        </td>\n      </tr>\n    </tbody>\n  </table>\n</div>\n"
 
 /***/ }),
 
@@ -2714,7 +2912,13 @@ module.exports = module.exports.toString();
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__add_public_profile_add_public_profile_component__ = __webpack_require__("../../../../../src/app/pages/admin/add-public-profile/add-public-profile.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__edit_public_profile_edit_public_profile_component__ = __webpack_require__("../../../../../src/app/pages/admin/edit-public-profile/edit-public-profile.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__delete_public_profile_delete_public_profile_component__ = __webpack_require__("../../../../../src/app/pages/admin/delete-public-profile/delete-public-profile.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__detail_public_profile_detail_public_profile_component__ = __webpack_require__("../../../../../src/app/pages/admin/detail-public-profile/detail-public-profile.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__backend_service__ = __webpack_require__("../../../../../src/app/backend.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PublicProfileComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2726,22 +2930,79 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
+
+
+
+
 var PublicProfileComponent = (function () {
-    function PublicProfileComponent() {
+    function PublicProfileComponent(back, snack, dialog) {
+        this.back = back;
+        this.snack = snack;
+        this.dialog = dialog;
+        this.loader = false;
+        this.allEventos = [];
     }
     PublicProfileComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.loader = true;
+        this.back.getAllPublicProfiles().subscribe(function (data) {
+            _this.loader = false;
+            _this.allEventos = data;
+        }, function (err) {
+            _this.loader = false;
+            _this.snack.open('Error, no se pudieron cargar todos los perfiles públicos.', '', { duration: 4000 });
+        });
+    };
+    PublicProfileComponent.prototype.openEdit = function (id, i) {
+        var _this = this;
+        var modal = this.dialog.open(__WEBPACK_IMPORTED_MODULE_1__edit_public_profile_edit_public_profile_component__["a" /* EditPublicProfileComponent */], { data: id, width: '80%' });
+        modal.afterClosed().subscribe(function (data) {
+            if (!data)
+                return;
+            if (data.err)
+                return;
+            _this.ngOnInit();
+        });
+    };
+    PublicProfileComponent.prototype.openDelete = function (id, i) {
+        var _this = this;
+        var modal = this.dialog.open(__WEBPACK_IMPORTED_MODULE_2__delete_public_profile_delete_public_profile_component__["a" /* DeletePublicProfileComponent */], { data: id, width: '60%' });
+        modal.afterClosed().subscribe(function (data) {
+            if (!data)
+                return;
+            if (data.err)
+                return;
+            _this.allEventos.splice(i, 1);
+        });
+    };
+    PublicProfileComponent.prototype.openAdd = function () {
+        var _this = this;
+        var modal = this.dialog.open(__WEBPACK_IMPORTED_MODULE_0__add_public_profile_add_public_profile_component__["a" /* AddPublicProfileComponent */], { width: '80%' });
+        modal.afterClosed().subscribe(function (data) {
+            if (!data)
+                return;
+            if (data.err)
+                return;
+            _this.allEventos.push(data);
+        });
+    };
+    PublicProfileComponent.prototype.openDetail = function (id) {
+        var modal = this.dialog.open(__WEBPACK_IMPORTED_MODULE_3__detail_public_profile_detail_public_profile_component__["a" /* DetailPublicProfileComponent */], { width: '80%', data: { id: id } });
     };
     return PublicProfileComponent;
 }());
 PublicProfileComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6__angular_core__["Component"])({
         selector: 'app-public-profile',
         template: __webpack_require__("../../../../../src/app/pages/admin/public-profile/public-profile.component.html"),
         styles: [__webpack_require__("../../../../../src/app/pages/admin/public-profile/public-profile.component.scss")]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_5__backend_service__["a" /* BackendService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__backend_service__["a" /* BackendService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__angular_material__["s" /* MdSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_material__["s" /* MdSnackBar */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__angular_material__["t" /* MdDialog */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_material__["t" /* MdDialog */]) === "function" && _c || Object])
 ], PublicProfileComponent);
 
+var _a, _b, _c;
 //# sourceMappingURL=public-profile.component.js.map
 
 /***/ }),
