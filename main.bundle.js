@@ -241,60 +241,62 @@ MaterialModule = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_ng2_ckeditor__ = __webpack_require__("../../../../ng2-ckeditor/lib/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_ng2_ckeditor___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_ng2_ckeditor__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__app_routing_module__ = __webpack_require__("../../../../../src/app/app-routing.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_core_login_login_component__ = __webpack_require__("../../../../../src/app/pages/core/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_core_home_home_component__ = __webpack_require__("../../../../../src/app/pages/core/home/home.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_core_dashboard_dashboard_component__ = __webpack_require__("../../../../../src/app/pages/core/dashboard/dashboard.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_admin_usuarios_usuarios_component__ = __webpack_require__("../../../../../src/app/pages/admin/usuarios/usuarios.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_admin_usuarios_add_usuarios_add_component__ = __webpack_require__("../../../../../src/app/pages/admin/usuarios-add/usuarios-add.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_admin_usuarios_edit_usuarios_edit_component__ = __webpack_require__("../../../../../src/app/pages/admin/usuarios-edit/usuarios-edit.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_admin_usuarios_delete_usuarios_delete_component__ = __webpack_require__("../../../../../src/app/pages/admin/usuarios-delete/usuarios-delete.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_admin_usuarios_detail_usuarios_detail_component__ = __webpack_require__("../../../../../src/app/pages/admin/usuarios-detail/usuarios-detail.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_admin_eventos_eventos_component__ = __webpack_require__("../../../../../src/app/pages/admin/eventos/eventos.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_admin_eventos_add_eventos_add_component__ = __webpack_require__("../../../../../src/app/pages/admin/eventos-add/eventos-add.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_admin_eventos_edit_eventos_edit_component__ = __webpack_require__("../../../../../src/app/pages/admin/eventos-edit/eventos-edit.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_admin_eventos_delete_eventos_delete_component__ = __webpack_require__("../../../../../src/app/pages/admin/eventos-delete/eventos-delete.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_admin_eventos_detail_eventos_detail_component__ = __webpack_require__("../../../../../src/app/pages/admin/eventos-detail/eventos-detail.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_admin_entradas_entradas_component__ = __webpack_require__("../../../../../src/app/pages/admin/entradas/entradas.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_admin_entradas_add_entradas_add_component__ = __webpack_require__("../../../../../src/app/pages/admin/entradas-add/entradas-add.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_admin_entradas_edit_entradas_edit_component__ = __webpack_require__("../../../../../src/app/pages/admin/entradas-edit/entradas-edit.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pages_admin_entradas_delete_entradas_delete_component__ = __webpack_require__("../../../../../src/app/pages/admin/entradas-delete/entradas-delete.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__pages_admin_entradas_detail_entradas_detail_component__ = __webpack_require__("../../../../../src/app/pages/admin/entradas-detail/entradas-detail.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__pages_admin_galerias_galerias_component__ = __webpack_require__("../../../../../src/app/pages/admin/galerias/galerias.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__pages_admin_galerias_add_galerias_add_component__ = __webpack_require__("../../../../../src/app/pages/admin/galerias-add/galerias-add.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__pages_admin_galerias_edit_galerias_edit_component__ = __webpack_require__("../../../../../src/app/pages/admin/galerias-edit/galerias-edit.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__pages_admin_galerias_delete_galerias_delete_component__ = __webpack_require__("../../../../../src/app/pages/admin/galerias-delete/galerias-delete.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__pages_admin_galerias_detail_galerias_detail_component__ = __webpack_require__("../../../../../src/app/pages/admin/galerias-detail/galerias-detail.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__pages_admin_galerias_upload_galerias_upload_component__ = __webpack_require__("../../../../../src/app/pages/admin/galerias-upload/galerias-upload.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__pages_core_profile_profile_component__ = __webpack_require__("../../../../../src/app/pages/core/profile/profile.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__pages_core_pacientes_pacientes_component__ = __webpack_require__("../../../../../src/app/pages/core/pacientes/pacientes.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__pages_core_pacientes_add_pacientes_add_component__ = __webpack_require__("../../../../../src/app/pages/core/pacientes-add/pacientes-add.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__pages_core_pacientes_edit_pacientes_edit_component__ = __webpack_require__("../../../../../src/app/pages/core/pacientes-edit/pacientes-edit.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__pages_core_pacientes_delete_pacientes_delete_component__ = __webpack_require__("../../../../../src/app/pages/core/pacientes-delete/pacientes-delete.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__pages_core_pacientes_detail_pacientes_detail_component__ = __webpack_require__("../../../../../src/app/pages/core/pacientes-detail/pacientes-detail.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__pages_core_profile_curriculum_upload_profile_curriculum_upload_component__ = __webpack_require__("../../../../../src/app/pages/core/profile-curriculum-upload/profile-curriculum-upload.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__pages_core_profile_edit_profile_edit_component__ = __webpack_require__("../../../../../src/app/pages/core/profile-edit/profile-edit.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__pages_core_profile_password_profile_password_component__ = __webpack_require__("../../../../../src/app/pages/core/profile-password/profile-password.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__pages_terapeuta_pacientes_terapeuta_pacientes_terapeuta_component__ = __webpack_require__("../../../../../src/app/pages/terapeuta/pacientes-terapeuta/pacientes-terapeuta.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__pages_terapeuta_citas_citas_component__ = __webpack_require__("../../../../../src/app/pages/terapeuta/citas/citas.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__pages_terapeuta_citas_add_citas_add_component__ = __webpack_require__("../../../../../src/app/pages/terapeuta/citas-add/citas-add.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_50__pages_terapeuta_citas_edit_citas_edit_component__ = __webpack_require__("../../../../../src/app/pages/terapeuta/citas-edit/citas-edit.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_51__pages_terapeuta_citas_delete_citas_delete_component__ = __webpack_require__("../../../../../src/app/pages/terapeuta/citas-delete/citas-delete.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_52__pages_terapeuta_citas_detail_citas_detail_component__ = __webpack_require__("../../../../../src/app/pages/terapeuta/citas-detail/citas-detail.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__pages_terapeuta_citas_archivar_citas_archivar_component__ = __webpack_require__("../../../../../src/app/pages/terapeuta/citas-archivar/citas-archivar.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__pages_terapeuta_citas_archivadas_citas_archivadas_component__ = __webpack_require__("../../../../../src/app/pages/terapeuta/citas-archivadas/citas-archivadas.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_55__pages_terapeuta_cuestionario_add_cuestionario_add_component__ = __webpack_require__("../../../../../src/app/pages/terapeuta/cuestionario-add/cuestionario-add.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__pages_terapeuta_cuestionario_edit_cuestionario_edit_component__ = __webpack_require__("../../../../../src/app/pages/terapeuta/cuestionario-edit/cuestionario-edit.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_57__pages_terapeuta_cuestionario_detail_cuestionario_detail_component__ = __webpack_require__("../../../../../src/app/pages/terapeuta/cuestionario-detail/cuestionario-detail.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_58__pages_admin_citas_admin_citas_admin_component__ = __webpack_require__("../../../../../src/app/pages/admin/citas-admin/citas-admin.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_59__seg_detail_seg_detail_component__ = __webpack_require__("../../../../../src/app/seg-detail/seg-detail.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_60__change_pass_change_pass_component__ = __webpack_require__("../../../../../src/app/change-pass/change-pass.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_61__pages_admin_public_profile_public_profile_component__ = __webpack_require__("../../../../../src/app/pages/admin/public-profile/public-profile.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_62__pages_admin_add_public_profile_add_public_profile_component__ = __webpack_require__("../../../../../src/app/pages/admin/add-public-profile/add-public-profile.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_63__pages_admin_delete_public_profile_delete_public_profile_component__ = __webpack_require__("../../../../../src/app/pages/admin/delete-public-profile/delete-public-profile.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_64__pages_admin_edit_public_profile_edit_public_profile_component__ = __webpack_require__("../../../../../src/app/pages/admin/edit-public-profile/edit-public-profile.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_65__pages_admin_detail_public_profile_detail_public_profile_component__ = __webpack_require__("../../../../../src/app/pages/admin/detail-public-profile/detail-public-profile.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_angular_calendar__ = __webpack_require__("../../../../angular-calendar/dist/esm/src/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__app_routing_module__ = __webpack_require__("../../../../../src/app/app-routing.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_core_login_login_component__ = __webpack_require__("../../../../../src/app/pages/core/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_core_home_home_component__ = __webpack_require__("../../../../../src/app/pages/core/home/home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_core_dashboard_dashboard_component__ = __webpack_require__("../../../../../src/app/pages/core/dashboard/dashboard.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_admin_usuarios_usuarios_component__ = __webpack_require__("../../../../../src/app/pages/admin/usuarios/usuarios.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_admin_usuarios_add_usuarios_add_component__ = __webpack_require__("../../../../../src/app/pages/admin/usuarios-add/usuarios-add.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_admin_usuarios_edit_usuarios_edit_component__ = __webpack_require__("../../../../../src/app/pages/admin/usuarios-edit/usuarios-edit.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_admin_usuarios_delete_usuarios_delete_component__ = __webpack_require__("../../../../../src/app/pages/admin/usuarios-delete/usuarios-delete.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_admin_usuarios_detail_usuarios_detail_component__ = __webpack_require__("../../../../../src/app/pages/admin/usuarios-detail/usuarios-detail.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_admin_eventos_eventos_component__ = __webpack_require__("../../../../../src/app/pages/admin/eventos/eventos.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_admin_eventos_add_eventos_add_component__ = __webpack_require__("../../../../../src/app/pages/admin/eventos-add/eventos-add.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_admin_eventos_edit_eventos_edit_component__ = __webpack_require__("../../../../../src/app/pages/admin/eventos-edit/eventos-edit.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_admin_eventos_delete_eventos_delete_component__ = __webpack_require__("../../../../../src/app/pages/admin/eventos-delete/eventos-delete.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_admin_eventos_detail_eventos_detail_component__ = __webpack_require__("../../../../../src/app/pages/admin/eventos-detail/eventos-detail.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_admin_entradas_entradas_component__ = __webpack_require__("../../../../../src/app/pages/admin/entradas/entradas.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_admin_entradas_add_entradas_add_component__ = __webpack_require__("../../../../../src/app/pages/admin/entradas-add/entradas-add.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pages_admin_entradas_edit_entradas_edit_component__ = __webpack_require__("../../../../../src/app/pages/admin/entradas-edit/entradas-edit.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__pages_admin_entradas_delete_entradas_delete_component__ = __webpack_require__("../../../../../src/app/pages/admin/entradas-delete/entradas-delete.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__pages_admin_entradas_detail_entradas_detail_component__ = __webpack_require__("../../../../../src/app/pages/admin/entradas-detail/entradas-detail.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__pages_admin_galerias_galerias_component__ = __webpack_require__("../../../../../src/app/pages/admin/galerias/galerias.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__pages_admin_galerias_add_galerias_add_component__ = __webpack_require__("../../../../../src/app/pages/admin/galerias-add/galerias-add.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__pages_admin_galerias_edit_galerias_edit_component__ = __webpack_require__("../../../../../src/app/pages/admin/galerias-edit/galerias-edit.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__pages_admin_galerias_delete_galerias_delete_component__ = __webpack_require__("../../../../../src/app/pages/admin/galerias-delete/galerias-delete.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__pages_admin_galerias_detail_galerias_detail_component__ = __webpack_require__("../../../../../src/app/pages/admin/galerias-detail/galerias-detail.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__pages_admin_galerias_upload_galerias_upload_component__ = __webpack_require__("../../../../../src/app/pages/admin/galerias-upload/galerias-upload.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__pages_core_profile_profile_component__ = __webpack_require__("../../../../../src/app/pages/core/profile/profile.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__pages_core_pacientes_pacientes_component__ = __webpack_require__("../../../../../src/app/pages/core/pacientes/pacientes.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__pages_core_pacientes_add_pacientes_add_component__ = __webpack_require__("../../../../../src/app/pages/core/pacientes-add/pacientes-add.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__pages_core_pacientes_edit_pacientes_edit_component__ = __webpack_require__("../../../../../src/app/pages/core/pacientes-edit/pacientes-edit.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__pages_core_pacientes_delete_pacientes_delete_component__ = __webpack_require__("../../../../../src/app/pages/core/pacientes-delete/pacientes-delete.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__pages_core_pacientes_detail_pacientes_detail_component__ = __webpack_require__("../../../../../src/app/pages/core/pacientes-detail/pacientes-detail.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__pages_core_profile_curriculum_upload_profile_curriculum_upload_component__ = __webpack_require__("../../../../../src/app/pages/core/profile-curriculum-upload/profile-curriculum-upload.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__pages_core_profile_edit_profile_edit_component__ = __webpack_require__("../../../../../src/app/pages/core/profile-edit/profile-edit.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__pages_core_profile_password_profile_password_component__ = __webpack_require__("../../../../../src/app/pages/core/profile-password/profile-password.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__pages_terapeuta_pacientes_terapeuta_pacientes_terapeuta_component__ = __webpack_require__("../../../../../src/app/pages/terapeuta/pacientes-terapeuta/pacientes-terapeuta.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__pages_terapeuta_citas_citas_component__ = __webpack_require__("../../../../../src/app/pages/terapeuta/citas/citas.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_50__pages_terapeuta_citas_add_citas_add_component__ = __webpack_require__("../../../../../src/app/pages/terapeuta/citas-add/citas-add.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_51__pages_terapeuta_citas_edit_citas_edit_component__ = __webpack_require__("../../../../../src/app/pages/terapeuta/citas-edit/citas-edit.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_52__pages_terapeuta_citas_delete_citas_delete_component__ = __webpack_require__("../../../../../src/app/pages/terapeuta/citas-delete/citas-delete.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__pages_terapeuta_citas_detail_citas_detail_component__ = __webpack_require__("../../../../../src/app/pages/terapeuta/citas-detail/citas-detail.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__pages_terapeuta_citas_archivar_citas_archivar_component__ = __webpack_require__("../../../../../src/app/pages/terapeuta/citas-archivar/citas-archivar.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_55__pages_terapeuta_citas_archivadas_citas_archivadas_component__ = __webpack_require__("../../../../../src/app/pages/terapeuta/citas-archivadas/citas-archivadas.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__pages_terapeuta_cuestionario_add_cuestionario_add_component__ = __webpack_require__("../../../../../src/app/pages/terapeuta/cuestionario-add/cuestionario-add.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_57__pages_terapeuta_cuestionario_edit_cuestionario_edit_component__ = __webpack_require__("../../../../../src/app/pages/terapeuta/cuestionario-edit/cuestionario-edit.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_58__pages_terapeuta_cuestionario_detail_cuestionario_detail_component__ = __webpack_require__("../../../../../src/app/pages/terapeuta/cuestionario-detail/cuestionario-detail.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_59__pages_admin_citas_admin_citas_admin_component__ = __webpack_require__("../../../../../src/app/pages/admin/citas-admin/citas-admin.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_60__seg_detail_seg_detail_component__ = __webpack_require__("../../../../../src/app/seg-detail/seg-detail.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_61__change_pass_change_pass_component__ = __webpack_require__("../../../../../src/app/change-pass/change-pass.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_62__pages_admin_public_profile_public_profile_component__ = __webpack_require__("../../../../../src/app/pages/admin/public-profile/public-profile.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_63__pages_admin_add_public_profile_add_public_profile_component__ = __webpack_require__("../../../../../src/app/pages/admin/add-public-profile/add-public-profile.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_64__pages_admin_delete_public_profile_delete_public_profile_component__ = __webpack_require__("../../../../../src/app/pages/admin/delete-public-profile/delete-public-profile.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_65__pages_admin_edit_public_profile_edit_public_profile_component__ = __webpack_require__("../../../../../src/app/pages/admin/edit-public-profile/edit-public-profile.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_66__pages_admin_detail_public_profile_detail_public_profile_component__ = __webpack_require__("../../../../../src/app/pages/admin/detail-public-profile/detail-public-profile.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_67__pipes_citas_pipe__ = __webpack_require__("../../../../../src/app/pipes/citas.pipe.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -313,6 +315,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+
+// import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 
 
 
@@ -376,63 +381,64 @@ var AppModule = (function () {
 AppModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_11__angular_core__["NgModule"])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_13__app_component__["a" /* AppComponent */],
-            __WEBPACK_IMPORTED_MODULE_14__pages_core_login_login_component__["a" /* LoginComponent */],
-            __WEBPACK_IMPORTED_MODULE_15__pages_core_home_home_component__["a" /* HomeComponent */],
-            __WEBPACK_IMPORTED_MODULE_16__pages_core_dashboard_dashboard_component__["a" /* DashboardComponent */],
-            __WEBPACK_IMPORTED_MODULE_17__pages_admin_usuarios_usuarios_component__["a" /* UsuariosComponent */],
-            __WEBPACK_IMPORTED_MODULE_18__pages_admin_usuarios_add_usuarios_add_component__["a" /* UsuariosAddComponent */],
-            __WEBPACK_IMPORTED_MODULE_19__pages_admin_usuarios_edit_usuarios_edit_component__["a" /* UsuariosEditComponent */],
-            __WEBPACK_IMPORTED_MODULE_20__pages_admin_usuarios_delete_usuarios_delete_component__["a" /* UsuariosDeleteComponent */],
-            __WEBPACK_IMPORTED_MODULE_21__pages_admin_usuarios_detail_usuarios_detail_component__["a" /* UsuariosDetailComponent */],
-            __WEBPACK_IMPORTED_MODULE_22__pages_admin_eventos_eventos_component__["a" /* EventosComponent */],
-            __WEBPACK_IMPORTED_MODULE_23__pages_admin_eventos_add_eventos_add_component__["a" /* EventosAddComponent */],
-            __WEBPACK_IMPORTED_MODULE_24__pages_admin_eventos_edit_eventos_edit_component__["a" /* EventosEditComponent */],
-            __WEBPACK_IMPORTED_MODULE_25__pages_admin_eventos_delete_eventos_delete_component__["a" /* EventosDeleteComponent */],
-            __WEBPACK_IMPORTED_MODULE_26__pages_admin_eventos_detail_eventos_detail_component__["a" /* EventosDetailComponent */],
-            __WEBPACK_IMPORTED_MODULE_27__pages_admin_entradas_entradas_component__["a" /* EntradasComponent */],
-            __WEBPACK_IMPORTED_MODULE_28__pages_admin_entradas_add_entradas_add_component__["a" /* EntradasAddComponent */],
-            __WEBPACK_IMPORTED_MODULE_29__pages_admin_entradas_edit_entradas_edit_component__["a" /* EntradasEditComponent */],
-            __WEBPACK_IMPORTED_MODULE_30__pages_admin_entradas_delete_entradas_delete_component__["a" /* EntradasDeleteComponent */],
-            __WEBPACK_IMPORTED_MODULE_31__pages_admin_entradas_detail_entradas_detail_component__["a" /* EntradasDetailComponent */],
-            __WEBPACK_IMPORTED_MODULE_32__pages_admin_galerias_galerias_component__["a" /* GaleriasComponent */],
-            __WEBPACK_IMPORTED_MODULE_33__pages_admin_galerias_add_galerias_add_component__["a" /* GaleriasAddComponent */],
-            __WEBPACK_IMPORTED_MODULE_34__pages_admin_galerias_edit_galerias_edit_component__["a" /* GaleriasEditComponent */],
-            __WEBPACK_IMPORTED_MODULE_35__pages_admin_galerias_delete_galerias_delete_component__["a" /* GaleriasDeleteComponent */],
-            __WEBPACK_IMPORTED_MODULE_36__pages_admin_galerias_detail_galerias_detail_component__["a" /* GaleriasDetailComponent */],
-            __WEBPACK_IMPORTED_MODULE_37__pages_admin_galerias_upload_galerias_upload_component__["a" /* GaleriasUploadComponent */],
-            __WEBPACK_IMPORTED_MODULE_38__pages_core_profile_profile_component__["a" /* ProfileComponent */],
-            __WEBPACK_IMPORTED_MODULE_39__pages_core_pacientes_pacientes_component__["a" /* PacientesComponent */],
-            __WEBPACK_IMPORTED_MODULE_40__pages_core_pacientes_add_pacientes_add_component__["a" /* PacientesAddComponent */],
-            __WEBPACK_IMPORTED_MODULE_41__pages_core_pacientes_edit_pacientes_edit_component__["a" /* PacientesEditComponent */],
-            __WEBPACK_IMPORTED_MODULE_42__pages_core_pacientes_delete_pacientes_delete_component__["a" /* PacientesDeleteComponent */],
-            __WEBPACK_IMPORTED_MODULE_43__pages_core_pacientes_detail_pacientes_detail_component__["a" /* PacientesDetailComponent */],
-            __WEBPACK_IMPORTED_MODULE_44__pages_core_profile_curriculum_upload_profile_curriculum_upload_component__["a" /* ProfileCurriculumUploadComponent */],
-            __WEBPACK_IMPORTED_MODULE_45__pages_core_profile_edit_profile_edit_component__["a" /* ProfileEditComponent */],
-            __WEBPACK_IMPORTED_MODULE_46__pages_core_profile_password_profile_password_component__["a" /* ProfilePasswordComponent */],
-            __WEBPACK_IMPORTED_MODULE_47__pages_terapeuta_pacientes_terapeuta_pacientes_terapeuta_component__["a" /* PacientesTerapeutaComponent */],
-            __WEBPACK_IMPORTED_MODULE_48__pages_terapeuta_citas_citas_component__["a" /* CitasComponent */],
-            __WEBPACK_IMPORTED_MODULE_49__pages_terapeuta_citas_add_citas_add_component__["a" /* CitasAddComponent */],
-            __WEBPACK_IMPORTED_MODULE_50__pages_terapeuta_citas_edit_citas_edit_component__["a" /* CitasEditComponent */],
-            __WEBPACK_IMPORTED_MODULE_51__pages_terapeuta_citas_delete_citas_delete_component__["a" /* CitasDeleteComponent */],
-            __WEBPACK_IMPORTED_MODULE_52__pages_terapeuta_citas_detail_citas_detail_component__["a" /* CitasDetailComponent */],
-            __WEBPACK_IMPORTED_MODULE_53__pages_terapeuta_citas_archivar_citas_archivar_component__["a" /* CitasArchivarComponent */],
-            __WEBPACK_IMPORTED_MODULE_54__pages_terapeuta_citas_archivadas_citas_archivadas_component__["a" /* CitasArchivadasComponent */],
-            __WEBPACK_IMPORTED_MODULE_55__pages_terapeuta_cuestionario_add_cuestionario_add_component__["a" /* CuestionarioAddComponent */],
-            __WEBPACK_IMPORTED_MODULE_56__pages_terapeuta_cuestionario_edit_cuestionario_edit_component__["a" /* CuestionarioEditComponent */],
-            __WEBPACK_IMPORTED_MODULE_57__pages_terapeuta_cuestionario_detail_cuestionario_detail_component__["a" /* CuestionarioDetailComponent */],
-            __WEBPACK_IMPORTED_MODULE_58__pages_admin_citas_admin_citas_admin_component__["a" /* CitasAdminComponent */],
-            __WEBPACK_IMPORTED_MODULE_59__seg_detail_seg_detail_component__["a" /* SegDetailComponent */],
-            __WEBPACK_IMPORTED_MODULE_60__change_pass_change_pass_component__["a" /* ChangePassComponent */],
-            __WEBPACK_IMPORTED_MODULE_61__pages_admin_public_profile_public_profile_component__["a" /* PublicProfileComponent */],
-            __WEBPACK_IMPORTED_MODULE_62__pages_admin_add_public_profile_add_public_profile_component__["a" /* AddPublicProfileComponent */],
-            __WEBPACK_IMPORTED_MODULE_63__pages_admin_delete_public_profile_delete_public_profile_component__["a" /* DeletePublicProfileComponent */],
-            __WEBPACK_IMPORTED_MODULE_64__pages_admin_edit_public_profile_edit_public_profile_component__["a" /* EditPublicProfileComponent */],
-            __WEBPACK_IMPORTED_MODULE_65__pages_admin_detail_public_profile_detail_public_profile_component__["a" /* DetailPublicProfileComponent */],
+            __WEBPACK_IMPORTED_MODULE_14__app_component__["a" /* AppComponent */],
+            __WEBPACK_IMPORTED_MODULE_15__pages_core_login_login_component__["a" /* LoginComponent */],
+            __WEBPACK_IMPORTED_MODULE_16__pages_core_home_home_component__["a" /* HomeComponent */],
+            __WEBPACK_IMPORTED_MODULE_17__pages_core_dashboard_dashboard_component__["a" /* DashboardComponent */],
+            __WEBPACK_IMPORTED_MODULE_18__pages_admin_usuarios_usuarios_component__["a" /* UsuariosComponent */],
+            __WEBPACK_IMPORTED_MODULE_19__pages_admin_usuarios_add_usuarios_add_component__["a" /* UsuariosAddComponent */],
+            __WEBPACK_IMPORTED_MODULE_20__pages_admin_usuarios_edit_usuarios_edit_component__["a" /* UsuariosEditComponent */],
+            __WEBPACK_IMPORTED_MODULE_21__pages_admin_usuarios_delete_usuarios_delete_component__["a" /* UsuariosDeleteComponent */],
+            __WEBPACK_IMPORTED_MODULE_22__pages_admin_usuarios_detail_usuarios_detail_component__["a" /* UsuariosDetailComponent */],
+            __WEBPACK_IMPORTED_MODULE_23__pages_admin_eventos_eventos_component__["a" /* EventosComponent */],
+            __WEBPACK_IMPORTED_MODULE_24__pages_admin_eventos_add_eventos_add_component__["a" /* EventosAddComponent */],
+            __WEBPACK_IMPORTED_MODULE_25__pages_admin_eventos_edit_eventos_edit_component__["a" /* EventosEditComponent */],
+            __WEBPACK_IMPORTED_MODULE_26__pages_admin_eventos_delete_eventos_delete_component__["a" /* EventosDeleteComponent */],
+            __WEBPACK_IMPORTED_MODULE_27__pages_admin_eventos_detail_eventos_detail_component__["a" /* EventosDetailComponent */],
+            __WEBPACK_IMPORTED_MODULE_28__pages_admin_entradas_entradas_component__["a" /* EntradasComponent */],
+            __WEBPACK_IMPORTED_MODULE_29__pages_admin_entradas_add_entradas_add_component__["a" /* EntradasAddComponent */],
+            __WEBPACK_IMPORTED_MODULE_30__pages_admin_entradas_edit_entradas_edit_component__["a" /* EntradasEditComponent */],
+            __WEBPACK_IMPORTED_MODULE_31__pages_admin_entradas_delete_entradas_delete_component__["a" /* EntradasDeleteComponent */],
+            __WEBPACK_IMPORTED_MODULE_32__pages_admin_entradas_detail_entradas_detail_component__["a" /* EntradasDetailComponent */],
+            __WEBPACK_IMPORTED_MODULE_33__pages_admin_galerias_galerias_component__["a" /* GaleriasComponent */],
+            __WEBPACK_IMPORTED_MODULE_34__pages_admin_galerias_add_galerias_add_component__["a" /* GaleriasAddComponent */],
+            __WEBPACK_IMPORTED_MODULE_35__pages_admin_galerias_edit_galerias_edit_component__["a" /* GaleriasEditComponent */],
+            __WEBPACK_IMPORTED_MODULE_36__pages_admin_galerias_delete_galerias_delete_component__["a" /* GaleriasDeleteComponent */],
+            __WEBPACK_IMPORTED_MODULE_37__pages_admin_galerias_detail_galerias_detail_component__["a" /* GaleriasDetailComponent */],
+            __WEBPACK_IMPORTED_MODULE_38__pages_admin_galerias_upload_galerias_upload_component__["a" /* GaleriasUploadComponent */],
+            __WEBPACK_IMPORTED_MODULE_39__pages_core_profile_profile_component__["a" /* ProfileComponent */],
+            __WEBPACK_IMPORTED_MODULE_40__pages_core_pacientes_pacientes_component__["a" /* PacientesComponent */],
+            __WEBPACK_IMPORTED_MODULE_41__pages_core_pacientes_add_pacientes_add_component__["a" /* PacientesAddComponent */],
+            __WEBPACK_IMPORTED_MODULE_42__pages_core_pacientes_edit_pacientes_edit_component__["a" /* PacientesEditComponent */],
+            __WEBPACK_IMPORTED_MODULE_43__pages_core_pacientes_delete_pacientes_delete_component__["a" /* PacientesDeleteComponent */],
+            __WEBPACK_IMPORTED_MODULE_44__pages_core_pacientes_detail_pacientes_detail_component__["a" /* PacientesDetailComponent */],
+            __WEBPACK_IMPORTED_MODULE_45__pages_core_profile_curriculum_upload_profile_curriculum_upload_component__["a" /* ProfileCurriculumUploadComponent */],
+            __WEBPACK_IMPORTED_MODULE_46__pages_core_profile_edit_profile_edit_component__["a" /* ProfileEditComponent */],
+            __WEBPACK_IMPORTED_MODULE_47__pages_core_profile_password_profile_password_component__["a" /* ProfilePasswordComponent */],
+            __WEBPACK_IMPORTED_MODULE_48__pages_terapeuta_pacientes_terapeuta_pacientes_terapeuta_component__["a" /* PacientesTerapeutaComponent */],
+            __WEBPACK_IMPORTED_MODULE_49__pages_terapeuta_citas_citas_component__["a" /* CitasComponent */],
+            __WEBPACK_IMPORTED_MODULE_50__pages_terapeuta_citas_add_citas_add_component__["a" /* CitasAddComponent */],
+            __WEBPACK_IMPORTED_MODULE_51__pages_terapeuta_citas_edit_citas_edit_component__["a" /* CitasEditComponent */],
+            __WEBPACK_IMPORTED_MODULE_52__pages_terapeuta_citas_delete_citas_delete_component__["a" /* CitasDeleteComponent */],
+            __WEBPACK_IMPORTED_MODULE_53__pages_terapeuta_citas_detail_citas_detail_component__["a" /* CitasDetailComponent */],
+            __WEBPACK_IMPORTED_MODULE_54__pages_terapeuta_citas_archivar_citas_archivar_component__["a" /* CitasArchivarComponent */],
+            __WEBPACK_IMPORTED_MODULE_55__pages_terapeuta_citas_archivadas_citas_archivadas_component__["a" /* CitasArchivadasComponent */],
+            __WEBPACK_IMPORTED_MODULE_56__pages_terapeuta_cuestionario_add_cuestionario_add_component__["a" /* CuestionarioAddComponent */],
+            __WEBPACK_IMPORTED_MODULE_57__pages_terapeuta_cuestionario_edit_cuestionario_edit_component__["a" /* CuestionarioEditComponent */],
+            __WEBPACK_IMPORTED_MODULE_58__pages_terapeuta_cuestionario_detail_cuestionario_detail_component__["a" /* CuestionarioDetailComponent */],
+            __WEBPACK_IMPORTED_MODULE_59__pages_admin_citas_admin_citas_admin_component__["a" /* CitasAdminComponent */],
+            __WEBPACK_IMPORTED_MODULE_60__seg_detail_seg_detail_component__["a" /* SegDetailComponent */],
+            __WEBPACK_IMPORTED_MODULE_61__change_pass_change_pass_component__["a" /* ChangePassComponent */],
+            __WEBPACK_IMPORTED_MODULE_62__pages_admin_public_profile_public_profile_component__["a" /* PublicProfileComponent */],
+            __WEBPACK_IMPORTED_MODULE_63__pages_admin_add_public_profile_add_public_profile_component__["a" /* AddPublicProfileComponent */],
+            __WEBPACK_IMPORTED_MODULE_64__pages_admin_delete_public_profile_delete_public_profile_component__["a" /* DeletePublicProfileComponent */],
+            __WEBPACK_IMPORTED_MODULE_65__pages_admin_edit_public_profile_edit_public_profile_component__["a" /* EditPublicProfileComponent */],
+            __WEBPACK_IMPORTED_MODULE_66__pages_admin_detail_public_profile_detail_public_profile_component__["a" /* DetailPublicProfileComponent */],
+            __WEBPACK_IMPORTED_MODULE_67__pipes_citas_pipe__["a" /* CitasPipe */],
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["BrowserModule"],
-            __WEBPACK_IMPORTED_MODULE_12__app_routing_module__["a" /* AppRoutingModule */],
+            __WEBPACK_IMPORTED_MODULE_13__app_routing_module__["a" /* AppRoutingModule */],
             __WEBPACK_IMPORTED_MODULE_1__app_material__["a" /* MaterialModule */],
             __WEBPACK_IMPORTED_MODULE_4__angular_flex_layout__["a" /* FlexLayoutModule */],
             __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
@@ -442,49 +448,50 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_10_ng2_ckeditor__["CKEditorModule"],
             __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* HttpModule */],
             __WEBPACK_IMPORTED_MODULE_8_angular2_moment__["MomentModule"],
+            __WEBPACK_IMPORTED_MODULE_12_angular_calendar__["CalendarModule"].forRoot()
         ],
         entryComponents: [
-            __WEBPACK_IMPORTED_MODULE_18__pages_admin_usuarios_add_usuarios_add_component__["a" /* UsuariosAddComponent */],
-            __WEBPACK_IMPORTED_MODULE_19__pages_admin_usuarios_edit_usuarios_edit_component__["a" /* UsuariosEditComponent */],
-            __WEBPACK_IMPORTED_MODULE_20__pages_admin_usuarios_delete_usuarios_delete_component__["a" /* UsuariosDeleteComponent */],
-            __WEBPACK_IMPORTED_MODULE_21__pages_admin_usuarios_detail_usuarios_detail_component__["a" /* UsuariosDetailComponent */],
-            __WEBPACK_IMPORTED_MODULE_23__pages_admin_eventos_add_eventos_add_component__["a" /* EventosAddComponent */],
-            __WEBPACK_IMPORTED_MODULE_24__pages_admin_eventos_edit_eventos_edit_component__["a" /* EventosEditComponent */],
-            __WEBPACK_IMPORTED_MODULE_25__pages_admin_eventos_delete_eventos_delete_component__["a" /* EventosDeleteComponent */],
-            __WEBPACK_IMPORTED_MODULE_26__pages_admin_eventos_detail_eventos_detail_component__["a" /* EventosDetailComponent */],
-            __WEBPACK_IMPORTED_MODULE_28__pages_admin_entradas_add_entradas_add_component__["a" /* EntradasAddComponent */],
-            __WEBPACK_IMPORTED_MODULE_29__pages_admin_entradas_edit_entradas_edit_component__["a" /* EntradasEditComponent */],
-            __WEBPACK_IMPORTED_MODULE_30__pages_admin_entradas_delete_entradas_delete_component__["a" /* EntradasDeleteComponent */],
-            __WEBPACK_IMPORTED_MODULE_31__pages_admin_entradas_detail_entradas_detail_component__["a" /* EntradasDetailComponent */],
-            __WEBPACK_IMPORTED_MODULE_33__pages_admin_galerias_add_galerias_add_component__["a" /* GaleriasAddComponent */],
-            __WEBPACK_IMPORTED_MODULE_34__pages_admin_galerias_edit_galerias_edit_component__["a" /* GaleriasEditComponent */],
-            __WEBPACK_IMPORTED_MODULE_35__pages_admin_galerias_delete_galerias_delete_component__["a" /* GaleriasDeleteComponent */],
-            __WEBPACK_IMPORTED_MODULE_36__pages_admin_galerias_detail_galerias_detail_component__["a" /* GaleriasDetailComponent */],
-            __WEBPACK_IMPORTED_MODULE_37__pages_admin_galerias_upload_galerias_upload_component__["a" /* GaleriasUploadComponent */],
-            __WEBPACK_IMPORTED_MODULE_44__pages_core_profile_curriculum_upload_profile_curriculum_upload_component__["a" /* ProfileCurriculumUploadComponent */],
-            __WEBPACK_IMPORTED_MODULE_45__pages_core_profile_edit_profile_edit_component__["a" /* ProfileEditComponent */],
-            __WEBPACK_IMPORTED_MODULE_46__pages_core_profile_password_profile_password_component__["a" /* ProfilePasswordComponent */],
-            __WEBPACK_IMPORTED_MODULE_40__pages_core_pacientes_add_pacientes_add_component__["a" /* PacientesAddComponent */],
-            __WEBPACK_IMPORTED_MODULE_41__pages_core_pacientes_edit_pacientes_edit_component__["a" /* PacientesEditComponent */],
-            __WEBPACK_IMPORTED_MODULE_42__pages_core_pacientes_delete_pacientes_delete_component__["a" /* PacientesDeleteComponent */],
-            __WEBPACK_IMPORTED_MODULE_43__pages_core_pacientes_detail_pacientes_detail_component__["a" /* PacientesDetailComponent */],
-            __WEBPACK_IMPORTED_MODULE_49__pages_terapeuta_citas_add_citas_add_component__["a" /* CitasAddComponent */],
-            __WEBPACK_IMPORTED_MODULE_50__pages_terapeuta_citas_edit_citas_edit_component__["a" /* CitasEditComponent */],
-            __WEBPACK_IMPORTED_MODULE_51__pages_terapeuta_citas_delete_citas_delete_component__["a" /* CitasDeleteComponent */],
-            __WEBPACK_IMPORTED_MODULE_52__pages_terapeuta_citas_detail_citas_detail_component__["a" /* CitasDetailComponent */],
-            __WEBPACK_IMPORTED_MODULE_53__pages_terapeuta_citas_archivar_citas_archivar_component__["a" /* CitasArchivarComponent */],
-            __WEBPACK_IMPORTED_MODULE_55__pages_terapeuta_cuestionario_add_cuestionario_add_component__["a" /* CuestionarioAddComponent */],
-            __WEBPACK_IMPORTED_MODULE_56__pages_terapeuta_cuestionario_edit_cuestionario_edit_component__["a" /* CuestionarioEditComponent */],
-            __WEBPACK_IMPORTED_MODULE_57__pages_terapeuta_cuestionario_detail_cuestionario_detail_component__["a" /* CuestionarioDetailComponent */],
-            __WEBPACK_IMPORTED_MODULE_59__seg_detail_seg_detail_component__["a" /* SegDetailComponent */],
-            __WEBPACK_IMPORTED_MODULE_60__change_pass_change_pass_component__["a" /* ChangePassComponent */],
-            __WEBPACK_IMPORTED_MODULE_63__pages_admin_delete_public_profile_delete_public_profile_component__["a" /* DeletePublicProfileComponent */],
-            __WEBPACK_IMPORTED_MODULE_64__pages_admin_edit_public_profile_edit_public_profile_component__["a" /* EditPublicProfileComponent */],
-            __WEBPACK_IMPORTED_MODULE_62__pages_admin_add_public_profile_add_public_profile_component__["a" /* AddPublicProfileComponent */],
-            __WEBPACK_IMPORTED_MODULE_65__pages_admin_detail_public_profile_detail_public_profile_component__["a" /* DetailPublicProfileComponent */]
+            __WEBPACK_IMPORTED_MODULE_19__pages_admin_usuarios_add_usuarios_add_component__["a" /* UsuariosAddComponent */],
+            __WEBPACK_IMPORTED_MODULE_20__pages_admin_usuarios_edit_usuarios_edit_component__["a" /* UsuariosEditComponent */],
+            __WEBPACK_IMPORTED_MODULE_21__pages_admin_usuarios_delete_usuarios_delete_component__["a" /* UsuariosDeleteComponent */],
+            __WEBPACK_IMPORTED_MODULE_22__pages_admin_usuarios_detail_usuarios_detail_component__["a" /* UsuariosDetailComponent */],
+            __WEBPACK_IMPORTED_MODULE_24__pages_admin_eventos_add_eventos_add_component__["a" /* EventosAddComponent */],
+            __WEBPACK_IMPORTED_MODULE_25__pages_admin_eventos_edit_eventos_edit_component__["a" /* EventosEditComponent */],
+            __WEBPACK_IMPORTED_MODULE_26__pages_admin_eventos_delete_eventos_delete_component__["a" /* EventosDeleteComponent */],
+            __WEBPACK_IMPORTED_MODULE_27__pages_admin_eventos_detail_eventos_detail_component__["a" /* EventosDetailComponent */],
+            __WEBPACK_IMPORTED_MODULE_29__pages_admin_entradas_add_entradas_add_component__["a" /* EntradasAddComponent */],
+            __WEBPACK_IMPORTED_MODULE_30__pages_admin_entradas_edit_entradas_edit_component__["a" /* EntradasEditComponent */],
+            __WEBPACK_IMPORTED_MODULE_31__pages_admin_entradas_delete_entradas_delete_component__["a" /* EntradasDeleteComponent */],
+            __WEBPACK_IMPORTED_MODULE_32__pages_admin_entradas_detail_entradas_detail_component__["a" /* EntradasDetailComponent */],
+            __WEBPACK_IMPORTED_MODULE_34__pages_admin_galerias_add_galerias_add_component__["a" /* GaleriasAddComponent */],
+            __WEBPACK_IMPORTED_MODULE_35__pages_admin_galerias_edit_galerias_edit_component__["a" /* GaleriasEditComponent */],
+            __WEBPACK_IMPORTED_MODULE_36__pages_admin_galerias_delete_galerias_delete_component__["a" /* GaleriasDeleteComponent */],
+            __WEBPACK_IMPORTED_MODULE_37__pages_admin_galerias_detail_galerias_detail_component__["a" /* GaleriasDetailComponent */],
+            __WEBPACK_IMPORTED_MODULE_38__pages_admin_galerias_upload_galerias_upload_component__["a" /* GaleriasUploadComponent */],
+            __WEBPACK_IMPORTED_MODULE_45__pages_core_profile_curriculum_upload_profile_curriculum_upload_component__["a" /* ProfileCurriculumUploadComponent */],
+            __WEBPACK_IMPORTED_MODULE_46__pages_core_profile_edit_profile_edit_component__["a" /* ProfileEditComponent */],
+            __WEBPACK_IMPORTED_MODULE_47__pages_core_profile_password_profile_password_component__["a" /* ProfilePasswordComponent */],
+            __WEBPACK_IMPORTED_MODULE_41__pages_core_pacientes_add_pacientes_add_component__["a" /* PacientesAddComponent */],
+            __WEBPACK_IMPORTED_MODULE_42__pages_core_pacientes_edit_pacientes_edit_component__["a" /* PacientesEditComponent */],
+            __WEBPACK_IMPORTED_MODULE_43__pages_core_pacientes_delete_pacientes_delete_component__["a" /* PacientesDeleteComponent */],
+            __WEBPACK_IMPORTED_MODULE_44__pages_core_pacientes_detail_pacientes_detail_component__["a" /* PacientesDetailComponent */],
+            __WEBPACK_IMPORTED_MODULE_50__pages_terapeuta_citas_add_citas_add_component__["a" /* CitasAddComponent */],
+            __WEBPACK_IMPORTED_MODULE_51__pages_terapeuta_citas_edit_citas_edit_component__["a" /* CitasEditComponent */],
+            __WEBPACK_IMPORTED_MODULE_52__pages_terapeuta_citas_delete_citas_delete_component__["a" /* CitasDeleteComponent */],
+            __WEBPACK_IMPORTED_MODULE_53__pages_terapeuta_citas_detail_citas_detail_component__["a" /* CitasDetailComponent */],
+            __WEBPACK_IMPORTED_MODULE_54__pages_terapeuta_citas_archivar_citas_archivar_component__["a" /* CitasArchivarComponent */],
+            __WEBPACK_IMPORTED_MODULE_56__pages_terapeuta_cuestionario_add_cuestionario_add_component__["a" /* CuestionarioAddComponent */],
+            __WEBPACK_IMPORTED_MODULE_57__pages_terapeuta_cuestionario_edit_cuestionario_edit_component__["a" /* CuestionarioEditComponent */],
+            __WEBPACK_IMPORTED_MODULE_58__pages_terapeuta_cuestionario_detail_cuestionario_detail_component__["a" /* CuestionarioDetailComponent */],
+            __WEBPACK_IMPORTED_MODULE_60__seg_detail_seg_detail_component__["a" /* SegDetailComponent */],
+            __WEBPACK_IMPORTED_MODULE_61__change_pass_change_pass_component__["a" /* ChangePassComponent */],
+            __WEBPACK_IMPORTED_MODULE_64__pages_admin_delete_public_profile_delete_public_profile_component__["a" /* DeletePublicProfileComponent */],
+            __WEBPACK_IMPORTED_MODULE_65__pages_admin_edit_public_profile_edit_public_profile_component__["a" /* EditPublicProfileComponent */],
+            __WEBPACK_IMPORTED_MODULE_63__pages_admin_add_public_profile_add_public_profile_component__["a" /* AddPublicProfileComponent */],
+            __WEBPACK_IMPORTED_MODULE_66__pages_admin_detail_public_profile_detail_public_profile_component__["a" /* DetailPublicProfileComponent */]
         ],
         providers: [__WEBPACK_IMPORTED_MODULE_0__backend_service__["a" /* BackendService */]],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_13__app_component__["a" /* AppComponent */]]
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_14__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
 
@@ -893,7 +900,7 @@ var _a, _b, _c;
 /***/ "../../../../../src/app/pages/admin/citas-admin/citas-admin.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"crud-container b-eee\" fxLayout=\"column\">\r\n    <div class=\"crud-titles\" fxLayout=\"row\" fxLayoutAlign=\"start center\" fxLayoutWrap>\r\n      <h1>Citas</h1>\r\n      <button md-fab (click)=\"openAdd()\" style=\"margin-left: auto\"><md-icon>add</md-icon></button>\r\n    </div>\r\n    <md-progress-bar mode=\"indeterminate\" *ngIf=\"loader\"></md-progress-bar>\r\n    <table class=\"res-table w100\">\r\n      <thead>\r\n        <tr>\r\n          <th scope=\"col\">Consultorio</th>\r\n          <th scope=\"col\">Paciente</th>\r\n          <th scope=\"col\">Telefono</th>\r\n          <th scope=\"col\">Fecha</th>\r\n          <th scope=\"col\">Acciones</th>\r\n        </tr>\r\n      </thead>\r\n      <tbody>\r\n        <tr *ngFor=\"let row of allCitas\">\r\n          <td data-label=\"Consultorio\">\r\n            <span class=\"ng-table-cell\" *ngIf=\"row.consultorio == 'CONSUL_1'\">Consultorio 1</span>\r\n            <span class=\"ng-table-cell\" *ngIf=\"row.consultorio == 'CONSUL_2'\">Consultorio 2</span>\r\n            <span class=\"ng-table-cell\" *ngIf=\"row.consultorio == 'CONSUL_INFANTIL'\">Consultorio Infantil</span>\r\n            <span class=\"ng-table-cell\" *ngIf=\"row.consultorio == 'CONSUL_TRABAJO'\">Sala de Trabajo</span>\r\n            <span class=\"ng-table-cell\" *ngIf=\"row.consultorio == 'CONSUL_COMUN'\">Sala común</span>\r\n          </td>\r\n          <td data-label=\"Paciente\">{{row.paciente ? row.paciente.name + ' ' + row.paciente.firstLastName : 'Nada'}}</td>\r\n          <td data-label=\"Telefono\">{{row.telefono}}</td>\r\n          <td data-label=\"Fecha\">{{row.date | date}} a las {{row.hour}}:00</td>\r\n          <td data-label=\"Acciones\">\r\n            <button md-icon-button mdTooltip=\"Detalles\" (click)=\"openDetail(row.id)\"><md-icon class=\"c54\">details</md-icon></button>\r\n            <button md-icon-button mdTooltip=\"Borrar\" (click)=\"openDelete(row.id, i)\"><md-icon class=\"c54\">delete</md-icon></button>\r\n          </td>\r\n        </tr>\r\n      </tbody>\r\n    </table>\r\n  </div>"
+module.exports = "<div class=\"crud-container b-eee\" fxLayout=\"column\">\r\n    <div class=\"crud-titles\" fxLayout=\"row\" fxLayoutAlign=\"start center\" fxLayoutWrap>\r\n        <h1>Citas</h1>\r\n        <button md-fab (click)=\"openAdd()\" style=\"margin-left: auto\"><md-icon>add</md-icon></button>\r\n    </div>\r\n    <div class=\"searchBar\">\r\n        <md-input-container class=\"search\">\r\n            <input mdInput [(ngModel)]=\"consultorio\" type=\"text\" name=\"consultorio\" placeholder=\"Consultorio\">\r\n        </md-input-container>\r\n        <md-input-container class=\"search\">\r\n            <input mdInput [(ngModel)]=\"fecha\" type=\"text\" name=\"fecha\" placeholder=\"Fecha\">\r\n        </md-input-container>\r\n    </div>\r\n    <md-progress-bar mode=\"indeterminate\" *ngIf=\"loader\"></md-progress-bar>\r\n    <table class=\"res-table w100\">\r\n        <thead>\r\n            <tr>\r\n                <th scope=\"col\">Consultorio</th>\r\n                <th scope=\"col\">Paciente</th>\r\n                <th scope=\"col\">Telefono</th>\r\n                <th scope=\"col\">Fecha</th>\r\n                <th scope=\"col\">Acciones</th>\r\n            </tr>\r\n        </thead>\r\n        <tbody>\r\n            <tr *ngFor=\"let row of allCitas | citas: consultorio: fecha\">\r\n                <td data-label=\"Consultorio\">\r\n                    <span class=\"ng-table-cell\" *ngIf=\"row.consultorio == 'CONSUL_1'\">Consultorio 1</span>\r\n                    <span class=\"ng-table-cell\" *ngIf=\"row.consultorio == 'CONSUL_2'\">Consultorio 2</span>\r\n                    <span class=\"ng-table-cell\" *ngIf=\"row.consultorio == 'CONSUL_INFANTIL'\">Consultorio Infantil</span>\r\n                    <span class=\"ng-table-cell\" *ngIf=\"row.consultorio == 'CONSUL_TRABAJO'\">Sala de Trabajo</span>\r\n                    <span class=\"ng-table-cell\" *ngIf=\"row.consultorio == 'CONSUL_COMUN'\">Sala común</span>\r\n                </td>\r\n                <td data-label=\"Paciente\">{{row.paciente ? row.paciente.name + ' ' + row.paciente.firstLastName : 'Nada'}}</td>\r\n                <td data-label=\"Telefono\">{{row.telefono}}</td>\r\n                <td data-label=\"Fecha\">{{row.date | date}} a las {{row.hour}}:00</td>\r\n                <td data-label=\"Acciones\">\r\n                    <button md-icon-button mdTooltip=\"Detalles\" (click)=\"openDetail(row.id)\"><md-icon class=\"c54\">details</md-icon></button>\r\n                    <button md-icon-button mdTooltip=\"Borrar\" (click)=\"openDelete(row.id, i)\"><md-icon class=\"c54\">delete</md-icon></button>\r\n                </td>\r\n            </tr>\r\n        </tbody>\r\n    </table>\r\n</div>"
 
 /***/ }),
 
@@ -905,7 +912,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".header-content {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-direction: row;\n      flex-direction: row;\n  -ms-flex-pack: justify;\n      justify-content: space-between; }\n\n.search {\n  max-width: 100%;\n  -ms-flex-positive: 3;\n      flex-grow: 3;\n  padding-left: 10px; }\n\n.searchBar {\n  display: -ms-flexbox;\n  display: flex;\n  width: 100%;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  -ms-flex-pack: justify;\n      justify-content: space-between; }\n", ""]);
 
 // exports
 
@@ -5849,6 +5856,50 @@ PacientesTerapeutaComponent = __decorate([
 
 var _a, _b, _c;
 //# sourceMappingURL=pacientes-terapeuta.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/pipes/citas.pipe.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CitasPipe; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var CitasPipe = (function () {
+    function CitasPipe() {
+    }
+    CitasPipe.prototype.transform = function (items, consultorio, fecha) {
+        if (items && items.length) {
+            return items.filter(function (item) {
+                if (consultorio && item.consultorio.toLowerCase().indexOf(consultorio.toLowerCase()) === -1) {
+                    return false;
+                }
+                if (fecha && item.date.toLowerCase().indexOf(fecha.toLowerCase()) === -1) {
+                    return false;
+                }
+                return true;
+            });
+        }
+        else {
+            return items;
+        }
+    };
+    return CitasPipe;
+}());
+CitasPipe = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Pipe"])({
+        name: 'citas'
+    })
+], CitasPipe);
+
+//# sourceMappingURL=citas.pipe.js.map
 
 /***/ }),
 
